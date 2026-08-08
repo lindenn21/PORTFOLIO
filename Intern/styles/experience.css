@@ -17,39 +17,54 @@
 
 /* TOP PILL NAV */
 
-.exp-nav-pills {
+.exp-carousel-nav {
     display: flex;
     align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 16px;
+    min-height: 42px;
 }
 
-.exp-pill-btn {
-    padding: 10px 22px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+.carousel-arrow {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: #aaa;
-    font-size: .88rem;
-    font-weight: 500;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    font-size: 1.25rem;
+    line-height: 1;
     cursor: pointer;
-    transition: all .3s ease;
+    transition: color .25s ease, border-color .25s ease, background .25s ease, transform .25s ease;
 }
 
-.exp-pill-btn:hover {
+.carousel-arrow:hover {
     color: white;
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
 }
 
-.exp-pill-btn.active {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: white;
-    color: white;
+.carousel-arrow:active {
+    transform: scale(.94);
+}
+
+.carousel-arrow:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+.carousel-counter {
+    min-width: 58px;
+    text-align: center;
+    color: var(--muted);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.05rem;
     font-weight: 600;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
 }
-
-/* MAIN CARD CONTAINER */
 
 .exp-main-card {
     display: grid;
@@ -58,48 +73,74 @@
     align-items: center;
     background: rgba(15, 15, 15, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 28px;
+    border-radius: 1px;
     padding: 40px;
     backdrop-filter: blur(16px);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    will-change: transform;
+}
+
+.exp-main-card.slide-next {
+    animation: expSlideNext .36s cubic-bezier(.22, .61, .36, 1);
+}
+
+.exp-main-card.slide-prev {
+    animation: expSlidePrev .36s cubic-bezier(.22, .61, .36, 1);
+}
+
+@keyframes expSlideNext {
+    from {
+        transform: translateX(38px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes expSlidePrev {
+    from {
+        transform: translateX(-38px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 /* LEFT: LOGO BOX */
+
 .exp-logo-box {
-
     width: 100%;
-
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1;
 
     background: #000000;
 
-    border-radius: 20px;
+    border-radius: 1px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     border: 1px solid rgba(255, 255, 255, 0.06);
 
     overflow: hidden;
-
 }
 
-
 .exp-logo-box img {
-
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
 
-    transition: transform .4s ease;
+    display: block;
 
+    transition: transform .4s ease;
 }
 
+.exp-main-card:hover .exp-logo-box img {
+    transform: scale(1.05);
+}
 
 .exp-main-card:hover .exp-logo-box img {
 
@@ -182,9 +223,28 @@
 }
 
 @media(max-width:991px) {
+    .exp-carousel-nav {
+        justify-content: center;
+    }
+
     .exp-main-card {
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 28px;
+    }
+}
+
+@media(max-width:600px) {
+    .exp-carousel-nav {
+        gap: 12px;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .exp-main-card {
+        padding: 22px;
     }
 }

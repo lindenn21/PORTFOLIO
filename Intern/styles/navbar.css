@@ -2,31 +2,32 @@
                 NAVBAR.CSS — Monochrome & Hide-on-Hero
 ==================================================*/
 
-.top-nav{
 
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
+.top-nav {
 
-    height:72px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    height: 72px;
 
-    padding:0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    background:rgba(10,10,10,.88);
-    backdrop-filter:blur(18px);
+    padding: 0 48px;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    background: rgba(10, 10, 10, .88);
+    backdrop-filter: blur(18px);
 
-    z-index:999;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
 
-    opacity:0;
-    pointer-events:none;
-    transform:translateY(-20px);
+    z-index: 999;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
 
     transition:
         opacity .4s ease,
@@ -37,180 +38,233 @@
 
 /* VISIBLE WHEN SCROLLED PAST HERO */
 
-.top-nav.show{
+.top-nav.show {
 
-    opacity:1;
-    pointer-events:auto;
-    transform:translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 
 }
 
 /* BRAND */
 
-.nav-brand{
+.nav-brand {
 
-    display:flex;
-    align-items:center;
-    text-decoration:none;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 
 }
 
-.brand-name{
+.brand-name {
 
-    font-family:"Barlow Condensed",sans-serif;
-    font-size:1.6rem;
-    font-weight:700;
-    letter-spacing:2px;
-    color:white;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: white;
 
 }
 
 /* LINKS */
 
-.nav-links{
+.nav-links {
 
-    display:flex;
-    align-items:center;
-    gap:36px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
 
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-
-}
-
-.nav-link{
-
-    color:#888;
-    font-size:.9rem;
-    font-weight:400;
-    transition:.3s;
-    position:relative;
-    padding:6px 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 
 }
 
-.nav-link:hover{
-    color:white;
-}
+.nav-link {
 
-.nav-link.active{
-    color:white;
-}
-
-.nav-link::after{
-
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-4px;
-    width:0;
-    height:2px;
-    background:#ffffff;
-    transition:.3s;
+    color: #888;
+    font-size: .9rem;
+    font-weight: 400;
+    transition: .3s;
+    position: relative;
+    padding: 6px 0;
 
 }
 
-.nav-link.active::after{
-    width:100%;
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link.active {
+    color: white;
+}
+
+.nav-link::after {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: .3s;
+
+}
+
+.nav-link.active::after {
+    width: 100%;
 }
 
 /* RIGHT RESUME BUTTON */
 
-.nav-right{
-    display:flex;
-    align-items:center;
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
-.btn-resume{
+.btn-resume {
 
-    padding:9px 20px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.2);
-    color:white;
-    font-size:.88rem;
-    font-weight:500;
-    transition:.3s;
-    text-decoration:none;
+    padding: 9px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    color: white;
+    font-size: .88rem;
+    font-weight: 500;
+    transition: .3s;
+    text-decoration: none;
 
 }
 
-.btn-resume:hover{
+.btn-resume:hover {
 
-    background:white;
-    color:black;
-    border-color:white;
+    background: white;
+    color: black;
+    border-color: white;
 
 }
 
 /* MOBILE TOGGLE & MENU */
 
-.navbar-toggler{
+.navbar-toggler {
 
-    display:none;
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    background:rgba(255,255,255,.06);
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    gap:5px;
-
-}
-
-.navbar-toggler span{
-    width:20px;
-    height:2px;
-    background:white;
-}
-
-.mobile-menu{
-
-    position:absolute;
-    top:72px;
-    left:0;
-    right:0;
-    background:rgba(10,10,10,.98);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(255,255,255,.08);
-    display:none;
-    flex-direction:column;
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .06);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
 
 }
 
-.mobile-menu.active{
-    display:flex;
+.navbar-toggler span {
+    width: 20px;
+    height: 2px;
+    background: white;
 }
 
-.mobile-menu a{
-    padding:18px 48px;
-    color:#aaa;
-    transition:.3s;
+.mobile-menu {
+
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, .98);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    display: none;
+    flex-direction: column;
+
 }
 
-.mobile-menu a:hover{
-    background:rgba(255,255,255,.08);
-    color:white;
+.mobile-menu.active {
+    display: flex;
 }
 
-.mobile-resume{
-    color:white !important;
-    font-weight:600;
+.mobile-menu a {
+    padding: 18px 48px;
+    color: #aaa;
+    transition: .3s;
 }
 
-@media(max-width:991px){
+.mobile-menu a:hover {
+    background: rgba(255, 255, 255, .08);
+    color: white;
+}
 
-    .nav-links, .nav-right{
-        display:none;
+.mobile-resume {
+    color: white !important;
+    font-weight: 600;
+}
+
+@media(max-width:991px) {
+
+    .nav-links,
+    .nav-right {
+        display: none;
     }
 
-    .navbar-toggler{
-        display:flex;
+    .navbar-toggler {
+        display: flex;
     }
 
-    .top-nav{
-        padding:0 24px;
+    .top-nav {
+        padding: 0 24px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    /* Hide hamburger */
+    #navToggler {
+        display: none !important;
+    }
+
+    /* Hide dropdown menu */
+    #mobileMenu {
+        display: none !important;
+    }
+
+    /* Mobile navbar */
+    .nav-links {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+
+    .nav-brand {
+        flex-shrink: 0;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 16px;
+    }
+
+    .nav-links {
+        flex: 1;
+        justify-content: flex-end;
+        gap: 12px;
     }
 
 }

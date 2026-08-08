@@ -4,39 +4,166 @@
 
 #about {
     position: relative;
-    padding: 100px 0;
+    padding: 0px 0px 120px;
+    margin-top: 0px;
 }
 
-/* TYPEWRITER INTRO */
+
+/* =========================================
+   ABOUT INTRO — TYPEWRITER SCROLL STAGE
+========================================= */
+
+/* .about-intro {
+    position: relative; */
+
+/*
+     * JS dynamically controls the actual height.
+     * This is only a fallback.
+     */
+/* min-height: 160vh;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 80px;
+} */
 
 .about-intro {
-    min-height: 45vh;
+    min-height: 100vh;
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
-    margin-bottom: 80px;
+
+    padding: 0px;
+    box-sizing: border-box;
+    margin-top: -200px !important;
+    transform: translateY(-80px);
 }
+
+/* =========================================
+   STICKY TYPEWRITER
+========================================= */
 
 .intro-text-wrap {
-    max-width: 900px;
-    margin: 0 auto;
+    position: relative;
+
+    top: 0vh;
+    /* 
+    width: 100%;
+    max-width: 900px; */
+
+    height: 60vh;
+    margin-bottom: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
 }
+
+
+/* =========================================
+   TYPEWRITER TEXT
+========================================= */
 
 .intro-typewriter {
-    font-family: "Inter", sans-serif;
+    width: 100%;
+
+    text-align: center;
+
     font-size: clamp(1.8rem, 3.5vw, 3rem);
-    font-weight: 600;
-    line-height: 1.4;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-    min-height: 3em;
+
+    line-height: 1.5;
+
+    font-weight: 800;
+
+    color: var(--text-primary);
+
+    margin: 0;
+
 }
 
-.intro-cursor {
-    color: white;
-    font-weight: 300;
-    animation: cursorBlink .8s step-end infinite;
+/* =========================================
+   MOBILE TYPEWRITER
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* ================================
+       MOBILE ABOUT FLOW
+       ================================ */
+
+    .about-intro {
+        display: block !important;
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        padding: 80px 20px 0 !important;
+        margin: 0 !important;
+    }
+
+    .intro-text-wrap {
+        display: block !important;
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .intro-typewriter {
+        display: block !important;
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+        line-height: 1.6;
+    }
+
+    /* INTRO → SKILLS */
+    .tech-stack-section {
+        display: block !important;
+        position: relative !important;
+
+        width: 92% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 120px auto 120px !important;
+    }
+
+    .stack-header-row {
+        margin-bottom: 25px !important;
+    }
+
 }
 
 /* TECH STACK & HARDWARE SECTION */
@@ -52,7 +179,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .stack-heading {
@@ -69,7 +196,7 @@
 
 .stack-pill-btn {
     padding: 10px 20px;
-    border-radius: 999px;
+    border-radius: 1px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: #aaa;
@@ -124,7 +251,7 @@
 .stack-card {
     background: rgba(20, 20, 20, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
+    border-radius: 1px;
     padding: 35px 25px;
     display: flex;
     align-items: center;
@@ -243,79 +370,196 @@
     line-height: 1.65;
 }
 
+@media (max-width: 600px) {
+    .stack-labels.show {
+        display: none;
+    }
+
+    .stack-labels {
+        display: none;
+    }
+
+
+}
+
 /*==================================================
-        EDUCATION BLOCK (MATCHED TO EXPERIENCE)
+        EDUCATION BLOCK
 ==================================================*/
 
 .education-block {
     width: min(1100px, 92%);
     margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.edu-nav-pills {
+
+/* ---------- Navigation ---------- */
+
+.edu-carousel-nav {
     display: flex;
     align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 16px;
+    min-height: 42px;
 }
 
-.edu-pill-btn {
-    padding: 10px 22px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+.carousel-arrow {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     color: #aaa;
-    font-size: .88rem;
-    font-weight: 500;
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1px;
+
+    font-size: 1.25rem;
+    line-height: 1;
+
     cursor: pointer;
-    transition: all .3s ease;
+
+    transition:
+        color .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        transform .25s ease;
 }
 
-.edu-pill-btn:hover {
+.carousel-arrow:hover {
     color: white;
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
 }
 
-.edu-pill-btn.active {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: white;
-    color: white;
+.carousel-arrow:active {
+    transform: scale(.94);
+}
+
+.carousel-arrow:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+.carousel-counter {
+    min-width: 58px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.05rem;
     font-weight: 600;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+
+    letter-spacing: 1px;
 }
 
-.edu-main-card {
+
+/* ---------- Main Education Card ---------- */
+
+/* .edu-main-card {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 45px;
     align-items: center;
+
     background: rgba(15, 15, 15, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 28px;
+    border-radius: 1px;
     padding: 40px;
+
     backdrop-filter: blur(16px);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+} */
+
+
+/* ---------- Slide Animation ---------- */
+
+.edu-main-card.slide-next {
+    animation:
+        eduSlideNext .36s cubic-bezier(.22, .61, .36, 1);
+}
+
+.edu-main-card.slide-prev {
+    animation:
+        eduSlidePrev .36s cubic-bezier(.22, .61, .36, 1);
+}
+
+@keyframes eduSlideNext {
+
+    from {
+        transform: translateX(38px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes eduSlidePrev {
+
+    from {
+        transform: translateX(-38px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* ---------- Logo ---------- */
+
+.edu-main-card {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 35px;
+    align-items: center;
+
+    background: rgba(15, 15, 15, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1px;
+    padding: 32px;
+
+    backdrop-filter: blur(16px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+
+    will-change: transform;
 }
 
 .edu-logo-box {
-    background: #000000;
-    border-radius: 20px;
-    aspect-ratio: 1.3;
+    width: 100%;
+    max-width: 190px;
+    aspect-ratio: 1.1 / 1;
+
+    background: #000;
+
+    border-radius: 1px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border: 5px solid rgba(0, 0, 0, 0.967);
+
     overflow: hidden;
 }
 
 .edu-logo-box img {
-    max-width: 85%;
-    max-height: 85%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
     transition: transform .4s ease;
 }
 
@@ -323,75 +567,59 @@
     transform: scale(1.05);
 }
 
+/* ---------- Education Details ---------- */
+
 .edu-details-content {
     display: flex;
     flex-direction: column;
 }
 
+
+/* Degree */
+
 .edu-school-title {
     font-family: "Barlow Condensed", sans-serif;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+
     font-weight: 700;
+
     color: white;
+
     line-height: 1.05;
-    margin-bottom: 8px;
+
+    margin: 0 0 10px 0;
 }
+
+
+/* School + Year */
 
 .edu-degree-date {
-    font-size: 1.05rem;
+    font-size: 1rem;
+
     color: var(--muted);
+
     font-weight: 500;
-    margin-bottom: 20px;
+
+    line-height: 1.5;
+
+    margin: 0;
 }
 
-.edu-divider {
-    border: none;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    margin-bottom: 24px;
-}
 
-.edu-bullet-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 30px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+/* Keep these hidden */
 
-.edu-bullet-list li {
-    font-size: .92rem;
-    color: #d0d0d0;
-    line-height: 1.6;
-    position: relative;
-    padding-left: 18px;
-}
-
-.edu-bullet-list li::before {
-    content: "•";
-    color: white;
-    position: absolute;
-    left: 0;
-}
-
+.edu-divider,
+.edu-bullet-list,
 .edu-stack-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.edu-stack-pills span {
-    padding: 6px 14px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #aaa;
-    font-size: .8rem;
-    font-weight: 500;
+    display: none;
 }
 
 @media(max-width:991px) {
+
+    .edu-carousel-nav {
+        justify-content: center;
+    }
 
     .stack-grid,
     .stack-labels {
@@ -406,5 +634,40 @@
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .edu-main-card {
+        grid-template-columns: 110px 1fr;
+
+        gap: 18px;
+
+        padding: 20px;
+
+        border-radius: 20px;
+    }
+
+    .edu-logo-box {
+        width: 110px;
+        aspect-ratio: 1 / 1;
+
+        border-radius: 14px;
+    }
+
+    .edu-details-content {
+        min-width: 0;
+    }
+
+    .edu-school-title {
+        font-size: clamp(1.25rem, 5vw, 1.7rem);
+        line-height: 1.05;
+        margin-bottom: 8px;
+    }
+
+    .edu-degree-date {
+        font-size: .82rem;
+        line-height: 1.4;
     }
 }

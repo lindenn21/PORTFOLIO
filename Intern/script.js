@@ -36,10 +36,10 @@ function initializePortfolio() {
     revealAnimation();
     heroTypewriter();
     aboutTypewriterScrollDriven();
-    experiencePillPicker();
+    experienceCarousel();
     stackPillPicker();
-    educationPillPicker();
-    projectStagePicker();
+    educationCarousel();
+    projectCarousel();
     smoothScrolling();
 }
 
@@ -129,7 +129,7 @@ function heroTypewriter() {
     const target = document.getElementById("heroTyped");
     if (!target) return;
 
-    const phrases = ["Let's build web apps", "Hardware & Software student", "Full-stack developer"];
+    const phrases = ["Hardware & Software student", "Doing side quests.."];
     let phraseIdx = 0;
     let charIdx = 0;
     let isDeleting = false;
@@ -161,70 +161,223 @@ function heroTypewriter() {
     type();
 }
 
-/*=====================================================
-    ABOUT TYPEWRITER — SCROLL CONTROLLED
-    DOWN = TYPE
-    UP = DELETE
-=====================================================*/
-
+/*=====================================================*
+ * ABOUT TYPEWRITER — SCROLL CONTROLLED
+ *
+ * DOWN = TYPE
+ * UP   = DELETE
+ *
+ * Does NOT start typing until the intro
+ * actually enters the viewport.
+ *=====================================================*/
 function aboutTypewriterScrollDriven() {
 
-    const target = document.getElementById("introTypewriter");
-    const container = document.getElementById("aboutIntroBlock");
+    const target =
+        document.getElementById("introTypewriter");
+
+    const container =
+        document.getElementById("aboutIntroBlock");
 
     if (!target || !container) return;
 
     const fullText =
-        "Linden Powell Rivera is a Computer Engineering student at the Polytechnic University of the Philippines – Sta. Mesa, with a growing focus on networking, hardware, and web development. He has hands-on experience in cabling, troubleshooting, and software projects while continuing to develop his technical skills.";
+        "Hello! Linden Powell Rivera is a Computer Engineering student at the Polytechnic University of the Philippines – Sta. Mesa, with a growing focus on networking, hardware, and web development. He has hands-on experience in cabling, troubleshooting, and software projects while continuing to develop his technical skills.";
 
-    let lastScrollY = window.scrollY;
-    let charCount = 0;
+    // 1.0 = normal
+    // 1.25 = 25% slower
+    // 1.5 = 50% slower
+    const typewriterSpeed = 1.25;
 
-    function updateTypewriter() {
+    let ticking = false;
 
-        const rect = container.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
 
-        /*
-            Start as soon as the intro enters
-            the lower part of the screen.
-        */
-        const start = windowHeight * 0.60;
+    /*=================================================
+     * STAGE HEIGHT
+     *=================================================*/
 
-        /*
-            Finish when the intro reaches
-            the upper part of the screen.
-        */
-        const end = windowHeight * 0.20;
+    function updateStageHeight() {
 
-        let progress =
-            (start - rect.top) / (start - end);
+        const vh = window.innerHeight;
+        const isMobile = window.innerWidth <= 600;
 
-        progress = Math.max(0, Math.min(1, progress));
+        let distance;
 
-        charCount = Math.floor(progress * fullText.length);
+        if (isMobile) {
 
-        const visibleText = fullText.substring(0, charCount);
-
-        if (charCount > 0) {
-
-            target.innerHTML =
-                visibleText +
-                '<span class="intro-cursor">|</span>';
+            distance = vh * 0.2;
 
         } else {
 
-            target.innerHTML = "";
-
+            distance = vh * 0.40;
         }
 
-        lastScrollY = window.scrollY;
+        distance *= typewriterSpeed;
+
+        /*
+         * Enough room to type the entire text.
+         */
+        container.style.minHeight =
+            `${vh + distance}px`;
     }
 
-    window.addEventListener("scroll", updateTypewriter);
 
+    /*=================================================
+     * TYPEWRITER
+     *=================================================*/
+
+    function updateTypewriter() {
+
+        const rect =
+            container.getBoundingClientRect();
+
+        const vh =
+            window.innerHeight;
+
+        const isMobile =
+            window.innerWidth <= 600;
+
+
+        /*---------------------------------------------
+         * HOW FAR THE USER MUST SCROLL
+         *---------------------------------------------*/
+
+        let distance;
+
+        if (isMobile) {
+
+            distance =
+                vh * 0.2;
+
+        } else {
+
+            distance =
+                vh * 0.40;
+        }
+
+        distance *= typewriterSpeed;
+
+
+        /*---------------------------------------------
+         * START POINT
+         *---------------------------------------------*/
+
+        /*
+         * The typewriter starts when the ABOUT
+         * INTRO reaches this point on screen.
+         *
+         * 0.85 = 85% down the viewport.
+         *
+         * This means the intro is actually
+         * visible before typing begins.
+         */
+
+        const startPoint =
+            vh * 0.25;
+
+
+        /*---------------------------------------------
+         * SCROLL PROGRESS
+         *---------------------------------------------*/
+
+        let progress =
+            (startPoint - rect.top) /
+            distance;
+
+
+        /*
+         * Clamp between:
+         *
+         * 0 = completely invisible
+         * 1 = completely typed
+         */
+
+        progress =
+            Math.max(
+                0,
+                Math.min(
+                    1,
+                    progress
+                )
+            );
+
+
+        /*---------------------------------------------
+         * CHARACTER COUNT
+         *---------------------------------------------*/
+
+        const charCount =
+            Math.floor(
+                progress *
+                fullText.length
+            );
+
+
+        /*---------------------------------------------
+         * DISPLAY
+         *---------------------------------------------*/
+
+        target.textContent =
+            fullText.substring(
+                0,
+                charCount
+            );
+
+
+        ticking = false;
+    }
+
+
+    /*=================================================
+     * SCROLL
+     *=================================================*/
+
+    function handleScroll() {
+
+        if (ticking) return;
+
+        ticking = true;
+
+        requestAnimationFrame(
+            updateTypewriter
+        );
+    }
+
+
+    /*=================================================
+     * RESIZE
+     *=================================================*/
+
+    function handleResize() {
+
+        updateStageHeight();
+        updateTypewriter();
+    }
+
+
+    /*=================================================
+     * INITIALIZE
+     *=================================================*/
+
+    updateStageHeight();
     updateTypewriter();
+
+
+    /*=================================================
+     * EVENTS
+     *=================================================*/
+
+    window.addEventListener(
+        "scroll",
+        handleScroll,
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "resize",
+        handleResize
+    );
 }
+
 /*=====================================================
             EXPERIENCE PILL PICKER
 =====================================================*/
@@ -254,33 +407,60 @@ const expData = [
     }
 ];
 
-function experiencePillPicker() {
-    const pillBtns = document.querySelectorAll(".exp-pill-btn");
+function experienceCarousel() {
+    const prevBtn = document.getElementById("expPrev");
+    const nextBtn = document.getElementById("expNext");
+    const counterEl = document.getElementById("expCounter");
+    const card = document.querySelector(".exp-main-card");
+
     const titleEl = document.getElementById("expTitle");
     const roleDateEl = document.getElementById("expRoleDate");
     const logoImgEl = document.getElementById("expLogoImg");
     const bulletsEl = document.getElementById("expBullets");
     const stackEl = document.getElementById("expStackPills");
 
-    if (!pillBtns.length || !titleEl) return;
+    if (!prevBtn || !nextBtn || !card || !titleEl) return;
 
-    function renderExp(idx) {
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    function renderExp(idx, direction = 0) {
         const data = expData[idx];
         if (!data) return;
-
-        pillBtns.forEach((btn, i) => btn.classList.toggle("active", i === idx));
 
         titleEl.textContent = data.title;
         roleDateEl.textContent = data.roleDate;
         logoImgEl.src = data.logo;
-
+        logoImgEl.alt = `${data.title} logo`;
         bulletsEl.innerHTML = data.bullets.map(b => `<li>${b}</li>`).join("");
         stackEl.innerHTML = data.stack.map(s => `<span>${s}</span>`).join("");
+        counterEl.textContent = `${String(idx + 1).padStart(2, "0")} / ${String(expData.length).padStart(2, "0")}`;
+
+        card.classList.remove("slide-next", "slide-prev");
+
+        if (direction !== 0) {
+            void card.offsetWidth;
+            card.classList.add(direction > 0 ? "slide-next" : "slide-prev");
+
+            setTimeout(() => {
+                card.classList.remove("slide-next", "slide-prev");
+                isAnimating = false;
+            }, 380);
+        } else {
+            isAnimating = false;
+        }
     }
 
-    pillBtns.forEach((btn, idx) => {
-        btn.addEventListener("click", () => renderExp(idx));
-    });
+    function changeExp(direction) {
+        if (isAnimating || expData.length < 2) return;
+
+        isAnimating = true;
+        currentIndex = (currentIndex + direction + expData.length) % expData.length;
+        renderExp(currentIndex, direction);
+    }
+
+    prevBtn.addEventListener("click", () => changeExp(-1));
+    nextBtn.addEventListener("click", () => changeExp(1));
 
     renderExp(0);
 }
@@ -328,53 +508,85 @@ const eduData = [
         title: "Polytechnic University of the Philippines",
         degreeDate: "BS Computer Engineering · 2024 — Present",
         logo: "images/pup.png",
-        bullets: [
-            "Developing core competencies in Computer Engineering, bridging hardware systems and software development.",
-            "Built practical projects involving Operating Systems simulation, Data Structures & Algorithms, and Metro Train graph routing.",
-            "Hands-on experience in logic design, embedded computing, network configurations, and full-stack web integration."
-        ],
-        stack: ["Operating Systems", "Data Structures", "Networking", "Python", "Flask", "Web Dev"]
+        // bullets: [
+        //     "Developing core competencies in Computer Engineering, bridging hardware systems and software development.",
+        //     "Built practical projects involving Operating Systems simulation, Data Structures & Algorithms, and Metro Train graph routing.",
+        //     "Hands-on experience in logic design, embedded computing, network configurations, and full-stack web integration."
+        // ],
+        // stack: ["Operating Systems", "Data Structures", "Networking", "Python", "Flask", "Web Dev"]
     },
     {
         title: "Our Lady of Fatima University",
         degreeDate: "Senior High School – STEM · Completed",
-        logo: "images/pup.png",
-        bullets: [
-            "Academic track focusing on Science, Technology, Engineering, and Mathematics (STEM).",
-            "Developed strong foundations in mathematics, physical sciences, logic, and introductory programming concepts.",
-            "Participated in STEM research projects, problem-solving, and team collaborations."
-        ],
-        stack: ["STEM", "Mathematics", "Physics", "Research", "Logic"]
+        logo: "images/edu2.jpg",
+        // bullets: [
+        //     "Academic track focusing on Science, Technology, Engineering, and Mathematics (STEM).",
+        //     "Developed strong foundations in mathematics, physical sciences, logic, and introductory programming concepts.",
+        //     "Participated in STEM research projects, problem-solving, and team collaborations."
+        // ],
+        // stack: ["STEM", "Mathematics", "Physics", "Research", "Logic"]
     }
 ];
 
-function educationPillPicker() {
-    const pillBtns = document.querySelectorAll(".edu-pill-btn");
+function educationCarousel() {
+    const prevBtn = document.getElementById("eduPrev");
+    const nextBtn = document.getElementById("eduNext");
+    const counterEl = document.getElementById("eduCounter");
+    const card = document.querySelector(".edu-main-card");
+
     const titleEl = document.getElementById("eduTitle");
     const degreeDateEl = document.getElementById("eduDegreeDate");
     const logoImgEl = document.getElementById("eduLogoImg");
     const bulletsEl = document.getElementById("eduBullets");
     const stackEl = document.getElementById("eduStackPills");
 
-    if (!pillBtns.length || !titleEl) return;
+    if (!prevBtn || !nextBtn || !card || !titleEl) return;
 
-    function renderEdu(idx) {
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    function renderEdu(idx, direction = 0) {
         const data = eduData[idx];
         if (!data) return;
-
-        pillBtns.forEach((btn, i) => btn.classList.toggle("active", i === idx));
 
         titleEl.textContent = data.title;
         degreeDateEl.textContent = data.degreeDate;
         logoImgEl.src = data.logo;
+        logoImgEl.alt = `${data.title} logo`;
+        bulletsEl.innerHTML = (data.bullets || [])
+            .map(b => `<li>${b}</li>`)
+            .join("");
 
-        bulletsEl.innerHTML = data.bullets.map(b => `<li>${b}</li>`).join("");
-        stackEl.innerHTML = data.stack.map(s => `<span>${s}</span>`).join("");
+        stackEl.innerHTML = (data.stack || [])
+            .map(s => `<span>${s}</span>`)
+            .join("");
+        counterEl.textContent = `${String(idx + 1).padStart(2, "0")} / ${String(eduData.length).padStart(2, "0")}`;
+
+        card.classList.remove("slide-next", "slide-prev");
+
+        if (direction !== 0) {
+            void card.offsetWidth;
+            card.classList.add(direction > 0 ? "slide-next" : "slide-prev");
+
+            setTimeout(() => {
+                card.classList.remove("slide-next", "slide-prev");
+                isAnimating = false;
+            }, 380);
+        } else {
+            isAnimating = false;
+        }
     }
 
-    pillBtns.forEach((btn, idx) => {
-        btn.addEventListener("click", () => renderEdu(idx));
-    });
+    function changeEdu(direction) {
+        if (isAnimating || eduData.length < 2) return;
+
+        isAnimating = true;
+        currentIndex = (currentIndex + direction + eduData.length) % eduData.length;
+        renderEdu(currentIndex, direction);
+    }
+
+    prevBtn.addEventListener("click", () => changeEdu(-1));
+    nextBtn.addEventListener("click", () => changeEdu(1));
 
     renderEdu(0);
 }
@@ -383,23 +595,55 @@ function educationPillPicker() {
             FEATURED PROJECTS STAGE PICKER
 =====================================================*/
 
-function projectStagePicker() {
-    const tabBtns = document.querySelectorAll(".project-tab-btn");
-    const cards = document.querySelectorAll(".featured-project-card");
+function projectCarousel() {
+    const prevBtn = document.getElementById("projPrev");
+    const nextBtn = document.getElementById("projNext");
+    const counterEl = document.getElementById("projCounter");
+    const cards = Array.from(document.querySelectorAll(".featured-project-card"));
 
-    if (!tabBtns.length) return;
+    if (!prevBtn || !nextBtn || !cards.length) return;
 
-    tabBtns.forEach((btn, idx) => {
-        btn.addEventListener("click", () => {
-            tabBtns.forEach(b => b.classList.remove("active"));
-            cards.forEach(c => c.classList.remove("active"));
+    let currentIndex = cards.findIndex(card => card.classList.contains("active"));
+    if (currentIndex < 0) currentIndex = 0;
 
-            btn.classList.add("active");
-            if (cards[idx]) {
-                cards[idx].classList.add("active");
-            }
+    let isAnimating = false;
+
+    function renderProject(idx, direction = 0) {
+        cards.forEach(card => {
+            card.classList.remove("active", "slide-next", "slide-prev");
         });
-    });
+
+        const nextCard = cards[idx];
+        if (!nextCard) return;
+
+        nextCard.classList.add("active");
+        counterEl.textContent = `${String(idx + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+
+        if (direction !== 0) {
+            void nextCard.offsetWidth;
+            nextCard.classList.add(direction > 0 ? "slide-next" : "slide-prev");
+
+            setTimeout(() => {
+                nextCard.classList.remove("slide-next", "slide-prev");
+                isAnimating = false;
+            }, 380);
+        } else {
+            isAnimating = false;
+        }
+    }
+
+    function changeProject(direction) {
+        if (isAnimating || cards.length < 2) return;
+
+        isAnimating = true;
+        currentIndex = (currentIndex + direction + cards.length) % cards.length;
+        renderProject(currentIndex, direction);
+    }
+
+    prevBtn.addEventListener("click", () => changeProject(-1));
+    nextBtn.addEventListener("click", () => changeProject(1));
+
+    renderProject(currentIndex);
 }
 
 /*=====================================================
