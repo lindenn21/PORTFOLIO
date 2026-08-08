@@ -44,7 +44,7 @@
 
     padding: 0px;
     box-sizing: border-box;
-    margin-top: -200px !important;
+    margin-top: -150px !important;
     transform: translateY(-80px);
 }
 
@@ -53,23 +53,23 @@
 ========================================= */
 
 .intro-text-wrap {
-    position: relative;
+    position: sticky;
 
     top: 0vh;
     /* 
     width: 100%;
     max-width: 900px; */
+    width: fit-content;
+    padding: 20px;
 
     height: 60vh;
-    margin-bottom: 0px;
+    margin-bottom: -20px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     box-sizing: border-box;
-    width: 100%;
-    max-width: 1200px;
 }
 
 

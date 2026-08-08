@@ -181,7 +181,7 @@ function aboutTypewriterScrollDriven() {
     if (!target || !container) return;
 
     const fullText =
-        "Hello! Linden Powell Rivera is a Computer Engineering student at the Polytechnic University of the Philippines – Sta. Mesa, with a growing focus on networking, hardware, and web development. He has hands-on experience in cabling, troubleshooting, and software projects while continuing to develop his technical skills.";
+        "Linden Powell Rivera is a Computer Engineering student at the Polytechnic University of the Philippines – Sta. Mesa, with a growing focus on networking, hardware, and web development. He has hands-on experience in cabling, troubleshooting, and software projects while continuing to develop his technical skills.";
 
     // 1.0 = normal
     // 1.25 = 25% slower
