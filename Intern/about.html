@@ -1,136 +1,232 @@
 <!-- ABOUT -->
 <section id="about">
 
-  <!-- <div id="aboutIntro">
-
-    <video id="aboutVideo" autoplay muted loop>
-        <source src="images/about-vid.mp4" type="video/mp4">
-    </video>
-
-</div> -->
-  <div class="container about-container">
-
-    <div class="about-header" data-animate>
-      <div class="about-header-text">
-        <h2 class="section-title">About Linden</h2>
-        <p class="section-subtitle">
-          <!-- Building code. Breaking things on purpose to learn how they work. I'm a computer engineering
-          student exploring the space between hardware, software, and the web. -->
-        </p>
-
-        <div class="about-meta">
-          <span><i class="bi bi-geo-alt-fill"></i> Antipolo City, PH</span>
-          <span><i class="bi bi-mortarboard-fill"></i> BSCPE PUP Manila</span>
-        </div>
-      </div>
-
-    
-    </div>
-    </div>
-
-    <div class="about-body">
-
-  
-      
-      <div class="about-bio-card" data-animate>
-
-        <div class="bio-profile">
-    
-            <img id="aboutImage"
-                 src="images/profile.jpg"
-                 alt="Profile">
-    
-            <!-- <div class="status-dot"></div>
-     -->
-        </div>
-    
-    
-        <div class="bio-content">
-    
-            <p>
-                Linden Powell Rivera is a Computer Engineering student at the Polytechnic University 
-                of the Philippines – Sta. Mesa, with hands-on experience in networking,
-                cabling, and troubleshooting alongside his software work.
-            </p>
-    
-            <p>
-                He has built and collaborated on projects ranging from Python games to 
-                full operating-system and data-structure simulators, and is currently 
-                expanding into Next.js while learning to bridge hardware fundamentals 
-                with modern web development.
-            </p>
-    
-        </div>
-    
-    </div>
-
-    <div class="about-skills" data-animate>
-      <div class="skill-group">
-        <h4>Frontend</h4>
-        <div class="tag-row">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-        
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h4>Backend</h4>
-        <div class="tag-row">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h4>Tools &amp; Deploy</h4>
-        <div class="tag-row">
-          <span class="tag">Git</span>
-          <span class="tag">VS Code</span>
-          <span class="tag">Figma</span>
-          <span class="tag">Netlify</span>
-          <span class="tag">Vercel</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h4>AI Tools</h4>
-        <div class="tag-row">
-          <span class="tag">ChatGPT</span>
-          <span class="tag">Claude</span>
-          <span class="tag">Gemini</span>
-        </div>
-      </div>
-    </div>
-    </div>
-
-    <div class="education-block" data-animate>
-      <h2 class="section-title">Education</h2>
-      <p class="section-subtitle">A record of my academic journey</p>
-
-      <div class="education-list">
-
-        <div class="education-card">
-          <div class="edu-icon red"><i class="bi bi-mortarboard-fill"></i></div>
-          <div class="edu-info">
-            <h3>Bachelor of Science in Computer Engineering</h3>
-            <p>Polytechnic University of the Philippines – Sta. Mesa</p>
-          </div>
-          <span class="edu-date current">2024 — Present</span>
-        </div>
-
-        <div class="education-card">
-          <div class="edu-icon"><i class="bi bi-mortarboard-fill"></i></div>
-          <div class="edu-info">
-            <h3>Senior High School – STEM</h3>
-            <p>Our Lady of Fatima University</p>
-          </div>
-          <span class="edu-date">Completed</span>
-        </div>
-
-      </div>
+  <!-- TYPEWRITER INTRO -->
+  <div class="about-intro" id="aboutIntroBlock">
+    <div class="intro-text-wrap">
+      <p class="intro-typewriter" id="introTypewriter"></p>
     </div>
   </div>
+
+  <!-- SKILLS & HARDWARE SECTION -->
+  <div class="tech-stack-section">
+
+    <div class="stack-header-row" data-animate>
+      <h2 class="stack-heading">Skills &amp; Capabilities</h2>
+      <div class="stack-nav-pills">
+        <button class="stack-pill-btn active" data-stack-tab="tech">Tech Stack</button>
+        <button class="stack-pill-btn" data-stack-tab="hardware">Hardware &amp; Technical</button>
+      </div>
+    </div>
+
+    <!-- TECH STACK CONTENT -->
+    <div id="techStackContent" class="stack-tab-content active">
+
+      <div class="stack-grid">
+        <!-- FRONTEND -->
+        <div class="stack-card" data-animate>
+          <div class="stack-icons">
+            <div class="stack-icon-item">
+              <img src="images/tech/html.png" alt="HTML"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fa-brands fa-html5 fallback-icon" style="display:none;"></i>
+              <span>HTML</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="images/tech/css.png" alt="CSS"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fa-brands fa-css3-alt fallback-icon" style="display:none;"></i>
+              <span>CSS</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="images/tech/javascript.png" alt="JavaScript"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fa-brands fa-js fallback-icon" style="display:none;"></i>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BACKEND -->
+        <div class="stack-card" data-animate>
+          <div class="stack-icons">
+            <div class="stack-icon-item">
+              <img src="images/tech/python.png" alt="Python"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fa-brands fa-python fallback-icon" style="display:none;"></i>
+              <span>Python</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="images/tech/flask.png" alt="Flask"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fa-solid fa-flask-vial fallback-icon" style="display:none;"></i>
+              <span>Flask</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOOLS -->
+        <div class="stack-card" data-animate>
+          <div class="stack-icons">
+            <div class="stack-icon-item">
+              <img src="images/tech/git.png" alt="Git"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fa-brands fa-git-alt fallback-icon" style="display:none;"></i>
+              <span>Git</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="images/tech/figma.png" alt="Figma"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fa-brands fa-figma fallback-icon" style="display:none;"></i>
+              <span>Figma</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="images/tech/vscode.png" alt="VS Code"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fa-solid fa-code fallback-icon" style="display:none;"></i>
+              <span>VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-labels" data-animate>
+
+        <div class="stack-label-col">
+          <h4>Frontend</h4>
+          <p>Building responsive and interactive web interfaces.</p>
+        </div>
+
+        <div class="stack-label-col">
+          <h4>Backend</h4>
+          <p>For simple web applications and server-side logic.</p>
+        </div>
+
+        <div class="stack-label-col">
+          <h4>Tools &amp; Design</h4>
+          <p>
+            Tools for development, design, deployment, and project management.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HARDWARE / TECHNICAL CONTENT -->
+    <div id="hardwareStackContent" class="stack-tab-content">
+      <div class="stack-grid">
+        <!-- CABLING & NETWORKING -->
+        <div class="stack-card">
+          <div class="stack-icons">
+            <div class="stack-icon-item">
+              <i class="fa-solid fa-network-wired fallback-icon"></i>
+              <span>Cabling &amp; Crimping</span>
+            </div>
+            <div class="stack-icon-item">
+              <i class="fa-solid fa-ethernet fallback-icon"></i>
+              <span>Ethernet / UTP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PC BUILDING & DIAGNOSTICS -->
+        <div class="stack-card">
+          <div class="stack-icons">
+            <div class="stack-icon-item">
+              <i class="fa-solid fa-desktop fallback-icon"></i>
+              <span>PC Building</span>
+            </div>
+            <div class="stack-icon-item">
+              <i class="fa-solid fa-microchip fallback-icon"></i>
+              <span>Hardware Assembly</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TROUBLESHOOTING -->
+        <div class="stack-card">
+          <div class="stack-icons">
+            <div class="stack-icon-item">
+              <i class="fa-solid fa-wrench fallback-icon"></i>
+              <span>Troubleshooting</span>
+            </div>
+            <div class="stack-icon-item">
+              <i class="fa-solid fa-screwdriver-wrench fallback-icon"></i>
+              <span>System Repair</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-labels">
+        <div class="stack-label-col">
+          <h4>Networking &amp; Cabling</h4>
+          <p>RJ45 Crimping, Network Cabling, Patch Panels, Router/Switch Setup</p>
+        </div>
+        <div class="stack-label-col">
+          <h4>Hardware &amp; Assembly</h4>
+          <p>Custom PC Building, Component Diagnostics, Hardware Testing</p>
+        </div>
+        <div class="stack-label-col">
+          <h4>Technical Operations</h4>
+          <p>Hardware Troubleshooting, Operating System Installation, Technical Support</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- EDUCATION (MATCHED TO EXPERIENCE LAYOUT) -->
+  <div class="education-block" data-animate>
+
+    <h2 class="section-title">Education</h2>
+
+    <!-- TOP PILL TABS -->
+    <div class="edu-nav-pills">
+      <button class="edu-pill-btn active" data-edu="0">PUP Manila</button>
+      <button class="edu-pill-btn" data-edu="1">Fatima University</button>
+    </div>
+
+    <!-- MAIN EDUCATION CARD (MATCHES EXPERIENCE LAYOUT) -->
+    <div class="edu-main-card">
+
+      <!-- LEFT: LOGO BOX -->
+      <div class="edu-logo-box">
+        <img id="eduLogoImg" src="images/pup.png" alt="School Logo">
+      </div>
+
+      <!-- RIGHT: DETAILS CONTENT -->
+      <div class="edu-details-content">
+
+        <h2 id="eduTitle" class="edu-school-title">Polytechnic University of the Philippines</h2>
+        <div id="eduDegreeDate" class="edu-degree-date">BS Computer Engineering · 2024 — Present</div>
+
+        <hr class="edu-divider">
+
+        <ul id="eduBullets" class="edu-bullet-list">
+          <li>Developing core competencies in Computer Engineering, bridging hardware systems and software development.
+          </li>
+          <li>Built practical projects involving Operating Systems simulation, Data Structures &amp; Algorithms, and
+            Metro Train graph routing.</li>
+          <li>Hands-on experience in logic design, embedded computing, network configurations, and full-stack web
+            integration.</li>
+        </ul>
+
+        <div id="eduStackPills" class="edu-stack-pills">
+          <span>Operating Systems</span>
+          <span>Data Structures</span>
+          <span>Networking</span>
+          <span>Python</span>
+          <span>Flask</span>
+          <span>Web Dev</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
-  

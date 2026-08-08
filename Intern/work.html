@@ -2,319 +2,139 @@
 
     <div class="works-container">
 
-        <div class="works-header" data-animate>
+        <div class="works-header-row" data-animate>
+            <span class="featured-label">FEATURED PROJECTS</span>
 
-            <div class="works-title">
-
-                <h2>Works</h2>
-
-                <p>
-                    A collection of software, web, and algorithm projects.
-                </p>
-
+            <!-- PROJECT PICKER TABS -->
+            <div class="project-picker-tabs">
+                <button class="project-tab-btn active" data-proj="0">01 OS Simulator</button>
+                <button class="project-tab-btn" data-proj="1">02 Route Finder</button>
+                <button class="project-tab-btn" data-proj="2">03 DSA Visualizer</button>
             </div>
-
-            <div class="works-switch">
-
-                <button class="works-tab active" data-category="school">
-            
-                    Academic
-            
-                </button>
-            
-                <button class="works-tab" data-category="personal">
-            
-                    Personal
-            
-                </button>
-            
-            </div>
-
         </div>
 
-        <div class="works-grid school-works">
+        <!-- STACKED PROJECT DISPLAY CONTAINER -->
+        <div class="project-display-stage" data-animate>
 
-            <!-- PROJECT 1 -->
+            <!-- PROJECT CARD 0 -->
+            <div class="featured-project-card active" data-proj-index="0">
 
-            <article class="work-card large" data-animate>
-
-                <div class="work-image">
-
-                    <img src="images/project1.png" alt="OS Simulator">
-
+                <div class="fp-image">
+                    <img src="images/project1.png" alt="Operating System Simulator">
+                    <div class="fp-image-overlay">
+                        <h3>OS Simulator</h3>
+                        <span>Solo developer · Academic</span>
+                    </div>
                 </div>
 
-                <div class="work-number">01</div>
+                <div class="fp-details">
+                    <span class="fp-label">PROJECT DESCRIPTION</span>
+                    <p class="fp-desc">
+                        Operating System Simulator: A complete simulator featuring CPU Scheduling,
+                        Memory Management, Virtual Memory, and Disk Scheduling algorithms with
+                        interactive visualizations built as a web application.
+                    </p>
 
-                <div class="work-overlay">
+                    <span class="fp-label">KEY FEATURES</span>
+                    <ul class="fp-features">
+                        <li>Multiple CPU scheduling algorithms (FCFS, SJF, Priority, Round Robin)</li>
+                        <li>Memory management with paging and segmentation</li>
+                        <li>Interactive visual animations for each algorithm</li>
+                    </ul>
 
-                    <h3>Operating System Simulator</h3>
-
-                    <div class="work-stack">
-
+                    <span class="fp-label">TECH STACK</span>
+                    <div class="fp-stack">
                         <span>Python</span>
                         <span>Flask</span>
                         <span>HTML</span>
                         <span>CSS</span>
                         <span>JavaScript</span>
-
                     </div>
-
-                    <div class="work-description">
-
-                        Developed a complete Operating Systems simulator featuring CPU Scheduling, Memory Management, Virtual Memory, and Disk Scheduling algorithms with interactive visualizations.
-
-                    </div>
-
-
                 </div>
 
-            </article>
+                <span class="fp-number">01</span>
 
+            </div>
 
-            <article class="work-card medium" data-animate>
+            <!-- PROJECT CARD 1 -->
+            <div class="featured-project-card" data-proj-index="1">
 
-                <div class="work-image">
-
-                    <img src="images/project3.png" alt="Train">
-
+                <div class="fp-image">
+                    <img src="images/project3.png" alt="Metro Train Route Finder">
+                    <div class="fp-image-overlay">
+                        <h3>Route Finder</h3>
+                        <span>Solo developer · Academic</span>
+                    </div>
                 </div>
 
-                <div class="work-number">02</div>
+                <div class="fp-details">
+                    <span class="fp-label">PROJECT DESCRIPTION</span>
+                    <p class="fp-desc">
+                        Metro Train Route Finder: Built the backend routing algorithm that computes
+                        the optimal train path while displaying all intermediate stations between the
+                        source and destination on a visual map.
+                    </p>
 
-                <div class="work-overlay">
+                    <span class="fp-label">KEY FEATURES</span>
+                    <ul class="fp-features">
+                        <li>Graph-based shortest path algorithm</li>
+                        <li>Real-time station mapping and visualization</li>
+                        <li>Interactive route selection interface</li>
+                    </ul>
 
-                    <h3>Metro Train Route Finder</h3>
-
-                    <div class="work-stack">
-
+                    <span class="fp-label">TECH STACK</span>
+                    <div class="fp-stack">
                         <span>Python</span>
                         <span>Flask</span>
                         <span>HTML</span>
-                        <span>Javascript</span>
-
+                        <span>JavaScript</span>
                     </div>
-
-                    <div class="work-description">
-
-                        Built the backend routing algorithm that computes the optimal train path while displaying all intermediate stations between the source and destination.
-
-                    </div>
-
-                    <!-- <a href="#" class="work-button">
-
-                        View Project
-
-                        <i class="fa-solid fa-arrow-right"></i> -->
-
-                    <!-- </a> -->
-
                 </div>
 
-            </article>
+                <span class="fp-number">02</span>
 
-            <!-- PROJECT 3 -->
+            </div>
 
-            <article class="work-card medium" data-animate>
+            <!-- PROJECT CARD 2 -->
+            <div class="featured-project-card" data-proj-index="2">
 
-                <div class="work-image">
-
-                    <img src="images/project2.png" alt="DSA">
-
+                <div class="fp-image">
+                    <img src="images/project2.png" alt="DSA Visualizer">
+                    <div class="fp-image-overlay">
+                        <h3>DSA Visualizer</h3>
+                        <span>Solo developer · Academic</span>
+                    </div>
                 </div>
 
-                <div class="work-number">03</div>
+                <div class="fp-details">
+                    <span class="fp-label">PROJECT DESCRIPTION</span>
+                    <p class="fp-desc">
+                        DSA Visualizer: Interactive visualizers for Binary Trees, Binary Search Trees,
+                        Queue systems, and multiple sorting algorithms used in Data Structures courses,
+                        with step-by-step animation.
+                    </p>
 
-                <div class="work-overlay">
+                    <span class="fp-label">KEY FEATURES</span>
+                    <ul class="fp-features">
+                        <li>Binary Tree and BST insertion, traversal and deletion</li>
+                        <li>Sorting algorithm comparisons (Bubble, Quick, Merge, etc.)</li>
+                        <li>Step-by-step animated visualization</li>
+                    </ul>
 
-                    <h3>DSA Visualizer</h3>
-
-                    <div class="work-stack">
-
+                    <span class="fp-label">TECH STACK</span>
+                    <div class="fp-stack">
                         <span>Python</span>
                         <span>BST</span>
                         <span>Sorting</span>
-                        <span>Queue</span>
-
                     </div>
-
-                    <div class="work-description">
-
-                        Interactive visualizers for Binary Trees, Binary Search Trees, Queue systems, and multiple sorting algorithms used in Data Structures courses.
-
-                    </div>
-
-                    <!-- <a href="#" class="work-button">
-
-                        View Project
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a> -->
-
                 </div>
 
-            </article>
+                <span class="fp-number">03</span>
 
-            <!-- PROJECT 4 -->
+            </div>
 
-            <article class="work-card small" data-animate>
-
-                <div class="work-image">
-
-                    <img src="images/-.png" alt="Quiz">
-
-                </div>
-
-                <div class="work-number">04</div>
-
-                <div class="work-overlay">
-
-                    <h3>AI Quiz Generator</h3>
-
-                    <div class="work-stack">
-
-                        <span>Python</span>
-
-                    </div>
-
-                    <div class="work-description">
-
-                        Generates quizzes automatically from learning materials, allowing instructors and students to quickly create assessments.
-
-                    </div>
-
-                    <!-- <a href="#" class="work-button">
-
-                        View Project
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a> -->
-
-                </div>
-
-            </article>
-
-            <!-- PROJECT 5 -->
-
-            <article class="work-card small" data-animate>
-
-                <div class="work-image">
-
-                    <img src="images/-.png" alt="Game">
-
-                </div>
-
-                <div class="work-number">05</div>
-
-                <div class="work-overlay">
-
-                    <h3>Shoot The Answer</h3>
-
-                    <div class="work-stack">
-
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-
-                    </div>
-
-                    <div class="work-description">
-
-                        An educational browser game where players answer questions correctly to defeat enemies and progress through increasingly difficult stages.
-
-                    </div>
-
-                    <!-- <a href="#" class="work-button">
-
-                        View Project
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a> -->
-
-                </div>
-
-            </article>
-
-        </div>
-
-        <div class="works-grid personal-works">
-
-            <!-- PERSONAL PROJECT 1 -->
-        
-            <article class="work-card large" data-animate>
-        
-                <div class="work-image">
-        
-                    <img src="images/digital-id.png" alt="Digital ID Creator">
-        
-                </div>
-        
-                <div class="work-number">01</div>
-        
-                <div class="work-overlay">
-        
-                    <h3>Digital ID Creator</h3>
-        
-                    <div class="work-stack">
-        
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>MySQL</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-        
-                    </div>
-        
-                    <div class="work-description">
-        
-                        A database-driven digital identity system that generates and manages unique digital ID profiles.
-        
-                    </div>
-        
-                </div>
-        
-            </article>
-        
-        
-            <!-- PERSONAL PROJECT 2 -->
-        
-            <article class="work-card medium" data-animate>
-        
-                <div class="work-image">
-        
-                    <img src="images/portfolio.png" alt="Portfolio">
-        
-                </div>
-        
-                <div class="work-number">02</div>
-        
-                <div class="work-overlay">
-        
-                    <h3>Personal Portfolio</h3>
-        
-                    <div class="work-stack">
-        
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-        
-                    </div>
-        
-                    <div class="work-description">
-        
-                        A personal portfolio website designed to showcase my technical projects, skills, and development work.
-        
-                    </div>
-        
-                </div>
-        
-            </article>
-        
         </div>
 
     </div>
-    
+
 </section>

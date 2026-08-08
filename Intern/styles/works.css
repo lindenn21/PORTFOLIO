@@ -1,807 +1,231 @@
 /*==================================================
-                WORKS.CSS
-                PART 1
+        WORKS.CSS — Monochrome & Project Picker
 ==================================================*/
 
 #works{
     position:relative;
-    padding:140px 0;
-    overflow:hidden;
+    padding:120px 0;
 }
 
 .works-container{
-    width:min(1280px,92%);
+    width:min(1240px, 92%);
     margin:auto;
-}
-
-.works-header{
     display:flex;
-    justify-content:space-between;
-    align-items:end;
-    gap:40px;
-    margin-bottom:70px;
-}
-
-.works-title h2{
-    font-family:"Barlow Condensed",sans-serif;
-    font-size:clamp(3rem,5vw,4.8rem);
-    color:#fff;
-    line-height:.95;
-    margin-bottom:18px;
-}
-
-.works-title p{
-    max-width:650px;
-    color:var(--muted);
-    line-height:1.9;
-}
-
-/*==========================
-        GRID
-===========================*/
-
-.works-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:28px;
-
-}
-
-/*==========================
-        CARD
-===========================*/
-
-.work-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:28px;
-
-    background:#101010;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:.45s;
-
-    cursor:pointer;
-
-    min-height:470px;
-
-}
-
-/*==========================
-        IMAGE
-===========================*/
-
-.work-image{
-
-    position:absolute;
-
-    inset:0;
-
-    overflow:hidden;
-
-}
-
-.work-image img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.8s;
-
-}
-
-/*==========================
-        OVERLAY
-===========================*/
-
-.work-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
     flex-direction:column;
-
-    justify-content:flex-end;
-
-    padding:35px;
-
-    background:
-
-    linear-gradient(
-
-        to top,
-
-        rgba(0,0,0,.92),
-
-        rgba(0,0,0,.35),
-
-        transparent
-
-    );
-
+    gap:35px;
 }
 
-/*==========================
-        TITLE
-===========================*/
-
-.work-overlay h3{
-
-    font-size:2rem;
-
-    margin-bottom:15px;
-
-    color:white;
-
-    font-family:"Barlow Condensed",sans-serif;
-
-}
-
-/*==========================
-        STACK
-===========================*/
-
-.work-stack{
-
+.works-header-row{
     display:flex;
-
+    align-items:center;
+    justify-content:space-between;
     flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-bottom:20px;
-
+    gap:20px;
 }
 
-.work-stack span{
-
-    padding:10px 16px;
-
-    border-radius:999px;
-
-    background:rgba(255,50,50,.08);
-
-    border:1px solid rgba(255,50,50,.15);
-
+.featured-label{
     font-size:.85rem;
-
-    transition:.3s;
-
-}
-
-/*==========================
-        DESCRIPTION
-===========================*/
-
-.work-description{
-
-    color:#d8d8d8;
-
-    line-height:1.8;
-
-    max-height:0;
-
-    opacity:0;
-
-    overflow:hidden;
-
-    transition:.45s;
-
-}
-
-/*==========================
-        BUTTON
-===========================*/
-
-.work-button{
-
-    margin-top:24px;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    color:white;
-
+    color:var(--muted);
+    letter-spacing:3px;
     font-weight:600;
-
-    transition:.3s;
-
 }
 
-.work-button i{
+/* PROJECT PICKER TABS */
 
-    transition:.3s;
-
-}
-
-/*==========================
-        TOP BADGE
-===========================*/
-
-.work-number{
-
-    position:absolute;
-
-    top:25px;
-
-    right:25px;
-
-    width:56px;
-
-    height:56px;
-
-    border-radius:50%;
-
+.project-picker-tabs{
     display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
 
-    align-items:center;
+.project-tab-btn{
+    padding:10px 20px;
+    border-radius:999px;
+    background:rgba(255, 255, 255, 0.05);
+    border:1px solid rgba(255, 255, 255, 0.12);
+    color:#aaa;
+    font-size:.85rem;
+    font-weight:500;
+    cursor:pointer;
+    transition:all .3s ease;
+}
 
-    justify-content:center;
-
-    background:rgba(0,0,0,.55);
-
-    backdrop-filter:blur(16px);
-
+.project-tab-btn:hover{
     color:white;
-
-    font-weight:700;
-
-    border:1px solid rgba(255,255,255,.08);
-
+    border-color:rgba(255, 255, 255, 0.3);
 }
 
-/*==========================
-        HOVER
-===========================*/
-
-.work-card:hover{
-
-    transform:translateY(-12px);
-
-    border-color:rgba(255,60,60,.18);
-
-    box-shadow:
-
-    0 30px 60px rgba(0,0,0,.45),
-
-    0 0 35px rgba(255,40,40,.10);
-
+.project-tab-btn.active{
+    background:white;
+    color:black;
+    font-weight:600;
+    border-color:white;
+    box-shadow:0 0 20px rgba(255, 255, 255, 0.15);
 }
 
-.work-card:hover img{
+/* DISPLAY STAGE & CARDS STACKED */
 
-    transform:scale(1.08);
-
+.project-display-stage{
+    position:relative;
+    min-height:500px;
 }
 
-.work-card:hover .work-description{
-
-    opacity:1;
-
-    max-height:180px;
-
+.featured-project-card{
+    display:none;
+    grid-template-columns:1fr 1fr auto;
+    gap:50px;
+    align-items:center;
+    background:rgba(15, 15, 15, 0.8);
+    border:1px solid rgba(255, 255, 255, 0.08);
+    border-radius:28px;
+    padding:40px;
+    backdrop-filter:blur(16px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.5);
+    animation:fadeInProject .4s ease forwards;
 }
 
-.work-card:hover .work-stack span{
-
-    background:var(--red);
-
+.featured-project-card.active{
+    display:grid;
 }
 
-.work-card:hover .work-button i{
-
-    transform:translateX(8px);
-
-}
-
-.work-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(
-
-        circle at top right,
-
-        rgba(255,45,45,.18),
-
-        transparent 55%
-
-    );
-
-    opacity:0;
-
-    transition:.45s;
-
-}
-
-.work-card:hover::before{
-
-    opacity:1;
-
-}
-
-/*==================================================
-                WORKS.CSS
-                PART 2
-==================================================*/
-
-/*==================================
-        MASONRY SIZES
-==================================*/
-
-.work-card.large{
-    min-height:650px;
-}
-
-.work-card.medium{
-    min-height:520px;
-}
-
-.work-card.small{
-    min-height:380px;
-}
-
-/* Desktop Masonry */
-
-.work-card:nth-child(1){
-    grid-row:span 2;
-}
-
-.work-card:nth-child(2){
-    grid-row:span 1;
-}
-
-.work-card:nth-child(3){
-    grid-row:span 1;
-}
-
-.work-card:nth-child(4){
-    grid-column:span 2;
-    min-height:420px;
-}
-
-/*==================================
-        FLOATING DECORATION
-==================================*/
-
-.work-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    right:-110px;
-    top:-110px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255,40,40,.16),
-            transparent 72%
-        );
-
-    filter:blur(10px);
-
-    opacity:.65;
-
-    transition:.5s;
-
-}
-
-.work-card:hover::after{
-
-    transform:scale(1.2);
-
-    opacity:1;
-
-}
-
-/*==================================
-        IMAGE FLOAT
-==================================*/
-
-.work-image img{
-
-    animation:workFloat 8s ease-in-out infinite;
-
-}
-
-@keyframes workFloat{
-
-    0%,100%{
-
-        transform:scale(1);
-
+@keyframes fadeInProject{
+    from{
+        opacity:0;
+        transform:translateY(15px);
     }
-
-    50%{
-
-        transform:scale(1.03);
-
-    }
-
-}
-
-.work-card:hover .work-image img{
-
-    animation-play-state:paused;
-
-}
-
-/*==================================
-        REVEAL ANIMATION
-==================================*/
-
-.work-card{
-
-    opacity:0;
-
-    transform:translateY(70px);
-
-}
-
-.work-card.show{
-
-    opacity:1;
-
-    transform:none;
-
-    transition:
-
-        opacity .8s ease,
-
-        transform .8s ease;
-
-}
-
-.work-card:nth-child(1){
-
-    transition-delay:.05s;
-
-}
-
-.work-card:nth-child(2){
-
-    transition-delay:.15s;
-
-}
-
-.work-card:nth-child(3){
-
-    transition-delay:.25s;
-
-}
-
-.work-card:nth-child(4){
-
-    transition-delay:.35s;
-
-}
-
-.work-card:nth-child(5){
-
-    transition-delay:.45s;
-
-}
-
-.work-card:nth-child(6){
-
-    transition-delay:.55s;
-
-}
-
-/*==================================
-        TECH STACK
-==================================*/
-
-.work-stack span{
-
-    cursor:default;
-
-}
-
-.work-stack span:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-
-        0 8px 18px rgba(255,50,50,.18);
-
-}
-
-/*==================================
-        BUTTON
-==================================*/
-
-.work-button{
-
-    opacity:.85;
-
-}
-
-.work-card:hover .work-button{
-
-    opacity:1;
-
-}
-
-/*==================================
-        BORDER GLOW
-==================================*/
-
-.work-card{
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(18,18,18,.92),
-            rgba(10,10,10,.92)
-        );
-
-}
-
-.work-card:hover{
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(24,18,18,.95),
-            rgba(12,12,12,.95)
-        );
-
-}
-
-/*==================================
-        RESPONSIVE
-==================================*/
-
-@media(max-width:1100px){
-
-    .works-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .work-card:nth-child(1),
-    .work-card:nth-child(2),
-    .work-card:nth-child(3),
-    .work-card:nth-child(4){
-
-        grid-column:auto;
-        grid-row:auto;
-
-    }
-
-    .work-card.large,
-    .work-card.medium,
-    .work-card.small{
-
-        min-height:500px;
-
-    }
-
-}
-
-@media(max-width:768px){
-
-    #works{
-
-        padding:100px 0;
-
-    }
-
-    .works-header{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:20px;
-
-        margin-bottom:50px;
-
-    }
-
-    .work-card{
-
-        min-height:420px;
-
-        border-radius:22px;
-
-    }
-
-    .work-overlay{
-
-        padding:25px;
-
-    }
-
-    .work-overlay h3{
-
-        font-size:1.6rem;
-
-    }
-
-    .work-description{
-
-        max-height:none;
-
+    to{
         opacity:1;
-
+        transform:none;
     }
-
-    .work-button{
-
-        margin-top:18px;
-
-    }
-
 }
 
-@media(max-width:500px){
+/* IMAGE */
 
-    .work-card{
+.fp-image{
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    aspect-ratio:4/3;
+    background:#000000;
+    border:1px solid rgba(255, 255, 255, 0.08);
+}
 
-        min-height:360px;
+.fp-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
 
+.featured-project-card:hover .fp-image img{
+    transform:scale(1.05);
+}
+
+.fp-image-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, transparent 60%);
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:25px;
+}
+
+.fp-image-overlay h3{
+    font-family:"Barlow Condensed", sans-serif;
+    font-size:2.2rem;
+    color:white;
+    margin-bottom:2px;
+}
+
+.fp-image-overlay span{
+    font-size:.85rem;
+    color:#aaa;
+}
+
+/* DETAILS */
+
+.fp-details{
+    display:flex;
+    flex-direction:column;
+}
+
+.fp-label{
+    font-size:.75rem;
+    color:white;
+    letter-spacing:2px;
+    font-weight:600;
+    margin-top:20px;
+    margin-bottom:8px;
+    display:block;
+}
+
+.fp-label:first-child{
+    margin-top:0;
+}
+
+.fp-desc{
+    font-size:.95rem;
+    color:#d0d0d0;
+    line-height:1.65;
+}
+
+.fp-features{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.fp-features li{
+    font-size:.88rem;
+    color:var(--muted);
+    line-height:1.6;
+    position:relative;
+    padding-left:16px;
+    margin-bottom:4px;
+}
+
+.fp-features li::before{
+    content:"•";
+    color:white;
+    position:absolute;
+    left:0;
+}
+
+.fp-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.fp-stack span{
+    padding:6px 14px;
+    border-radius:8px;
+    background:rgba(255, 255, 255, 0.05);
+    border:1px solid rgba(255, 255, 255, 0.1);
+    color:#ccc;
+    font-size:.8rem;
+}
+
+/* NUMBER */
+
+.fp-number{
+    font-family:"Barlow Condensed", sans-serif;
+    font-size:2.2rem;
+    font-weight:700;
+    color:white;
+    align-self:flex-start;
+}
+
+@media(max-width:991px){
+    .featured-project-card{
+        grid-template-columns:1fr;
+        gap:30px;
+        padding:28px;
     }
-
-    .work-overlay{
-
-        padding:20px;
-
+    .fp-number{
+        position:absolute;
+        top:20px;
+        right:25px;
     }
-
-    .work-overlay h3{
-
-        font-size:1.35rem;
-
-    }
-
-    .work-stack{
-
-        gap:8px;
-
-    }
-
-    .work-stack span{
-
-        padding:8px 12px;
-
-        font-size:.75rem;
-
-    }
-
-    .work-description{
-
-        font-size:.9rem;
-
-        line-height:1.7;
-
-    }
-
-}
-
-/*==================================
-        OPTIONAL PARALLAX
-==================================*/
-
-.work-card{
-
-    will-change:transform;
-
-}
-
-/*==============================
-WORKS SWITCH
-==============================*/
-
-.works-switch {
-
-    display: flex;
-
-    gap: 10px;
-
-    margin-left: auto;
-
-}
-
-
-.works-tab {
-
-    padding: 12px 22px;
-
-    border-radius: 999px;
-
-    border: 1px solid rgba(255,255,255,.1);
-
-    background: rgba(255,255,255,.03);
-
-    color: var(--muted);
-
-    font-family: inherit;
-
-    cursor: pointer;
-
-    transition: .35s;
-
-}
-
-
-.works-tab:hover {
-
-    color: white;
-
-    border-color: rgba(180,0,0,.5);
-
-}
-
-
-.works-tab.active {
-
-    color: white;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #8b0000,
-            #350000
-        );
-
-    border-color: #8b0000;
-
-    box-shadow:
-
-        0 8px 25px rgba(120,0,0,.25);
-
-}
-
-
-/*==============================
-WORK CATEGORY
-==============================*/
-
-.personal-works {
-
-    display: none;
-
-}
-.works-tab:focus {
-
-    outline: none;
-
 }

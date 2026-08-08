@@ -1,17 +1,13 @@
 /*==================================================
-                NAVBAR.CSS
+                NAVBAR.CSS — Monochrome & Hide-on-Hero
 ==================================================*/
 
-.floating-nav{
+.top-nav{
 
     position:fixed;
-
-    top:24px;
-    left:50%;
-
-    transform:translateX(-50%) translateY(-30px);
-
-    width:min(700px,92%);
+    top:0;
+    left:0;
+    right:0;
 
     height:72px;
 
@@ -19,310 +15,202 @@
     align-items:center;
     justify-content:space-between;
 
-    padding:0 28px;
+    padding:0 48px;
 
-    border-radius:999px;
-
-    background:rgba(37, 7, 7, 0.78);
-
+    background:rgba(10,10,10,.88);
     backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,70,70,.08);
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.35);
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:
-        opacity .4s,
-        transform .4s,
-        visibility .4s;
+    border-bottom:1px solid rgba(255,255,255,.08);
 
     z-index:999;
 
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(-20px);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease,
+        background .4s ease;
+
 }
 
-/* Appears after Hero */
+/* VISIBLE WHEN SCROLLED PAST HERO */
 
-.floating-nav.show{
+.top-nav.show{
 
     opacity:1;
-    visibility:visible;
-
-    transform:
-        translateX(-50%)
-        translateY(0);
+    pointer-events:auto;
+    transform:translateY(0);
 
 }
 
-/*==============================
-            BRAND
-==============================*/
+/* BRAND */
 
 .nav-brand{
 
     display:flex;
-
-    flex-direction:column;
-
-    line-height:1;
+    align-items:center;
+    text-decoration:none;
 
 }
 
 .brand-name{
 
     font-family:"Barlow Condensed",sans-serif;
-
-    font-size:2rem;
-
+    font-size:1.6rem;
+    font-weight:700;
     letter-spacing:2px;
-
     color:white;
 
 }
 
-.brand-sub{
-
-    font-size:.7rem;
-
-    color:var(--muted);
-
-    letter-spacing:4px;
-
-    margin-top:2px;
-
-    text-transform:uppercase;
-
-}
-
-/*==============================
-            LINKS
-==============================*/
+/* LINKS */
 
 .nav-links{
 
     display:flex;
-
     align-items:center;
-
     gap:36px;
 
-}
-
-.nav-links li{
-
-    position:relative;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
 
 }
 
 .nav-link{
 
-    color:#bdbdbd;
-
-    font-size:.95rem;
-
-    font-weight:500;
-
-    transition:.35s;
-
+    color:#888;
+    font-size:.9rem;
+    font-weight:400;
+    transition:.3s;
     position:relative;
-
     padding:6px 0;
 
 }
 
 .nav-link:hover{
-
     color:white;
-
 }
 
-/*==============================
-        ACTIVE LINK
-==============================*/
+.nav-link.active{
+    color:white;
+}
 
 .nav-link::after{
 
     content:"";
-
     position:absolute;
-
     left:0;
-    bottom:-8px;
-
+    bottom:-4px;
     width:0;
-
     height:2px;
-
-    background:var(--red);
-
-    transition:.35s;
-
-}
-
-.nav-link.active{
-
-    color:white;
+    background:#ffffff;
+    transition:.3s;
 
 }
 
 .nav-link.active::after{
-
     width:100%;
+}
+
+/* RIGHT RESUME BUTTON */
+
+.nav-right{
+    display:flex;
+    align-items:center;
+}
+
+.btn-resume{
+
+    padding:9px 20px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.2);
+    color:white;
+    font-size:.88rem;
+    font-weight:500;
+    transition:.3s;
+    text-decoration:none;
 
 }
 
-/*==============================
-        MOBILE TOGGLE
-==============================*/
+.btn-resume:hover{
+
+    background:white;
+    color:black;
+    border-color:white;
+
+}
+
+/* MOBILE TOGGLE & MENU */
 
 .navbar-toggler{
 
     display:none;
-
-    width:48px;
-
-    height:48px;
-
+    width:44px;
+    height:44px;
     border-radius:50%;
-
-    background:rgba(255,255,255,.04);
-
+    background:rgba(255,255,255,.06);
     align-items:center;
-
     justify-content:center;
-
     flex-direction:column;
-
     gap:5px;
 
 }
 
 .navbar-toggler span{
-
     width:20px;
-
     height:2px;
-
     background:white;
-
-    transition:.35s;
-
 }
-
-/*==============================
-        MOBILE MENU
-==============================*/
 
 .mobile-menu{
 
     position:absolute;
-
-    top:90px;
-
+    top:72px;
     left:0;
-
-    width:100%;
-
-    background:#111;
-
-    border-radius:24px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    overflow:hidden;
-
+    right:0;
+    background:rgba(10,10,10,.98);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
     display:none;
-
     flex-direction:column;
 
 }
 
 .mobile-menu.active{
-
     display:flex;
-
 }
 
 .mobile-menu a{
-
-    padding:18px 24px;
-
-    color:white;
-
+    padding:18px 48px;
+    color:#aaa;
     transition:.3s;
-
 }
 
 .mobile-menu a:hover{
-
-    background:rgba(255,50,50,.08);
-
+    background:rgba(255,255,255,.08);
+    color:white;
 }
 
-/*==============================
-        HOVER EFFECT
-==============================*/
-
-.floating-nav::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:999px;
-
-    padding:1px;
-
-    pointer-events: none;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(255,60,60,.18),
-            transparent,
-            rgba(255,255,255,.04)
-        );
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-
-    mask-composite:exclude;
-
+.mobile-resume{
+    color:white !important;
+    font-weight:600;
 }
-
-/*==============================
-        RESPONSIVE
-==============================*/
 
 @media(max-width:991px){
 
-    .nav-links{
-
+    .nav-links, .nav-right{
         display:none;
-
     }
 
     .navbar-toggler{
-
         display:flex;
-
     }
 
-    .floating-nav{
-
-        width:92%;
-
-        padding:0 20px;
-
+    .top-nav{
+        padding:0 24px;
     }
 
 }
