@@ -73,7 +73,7 @@
     min-width: 58px;
     text-align: center;
     color: var(--muted);
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
     font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -167,10 +167,11 @@
 }
 
 .fp-image-overlay h3 {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 2.2rem;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.3;
     color: white;
-    margin-bottom: 2px;
+    margin-bottom: 6px;
 }
 
 .fp-image-overlay span {
@@ -200,7 +201,7 @@
 }
 
 .fp-desc {
-    font-size: .95rem;
+    font-size: 0.72rem;
     color: #d0d0d0;
     line-height: 1.65;
 }
@@ -234,19 +235,20 @@
 }
 
 .fp-stack span {
-    padding: 6px 14px;
+    padding: 5px 10px;
     border-radius: 1px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #ccc;
-    font-size: .8rem;
+    font-size: .58rem;
+    letter-spacing: -0.8px;
 }
 
 /* NUMBER */
 
 .fp-number {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 2.2rem;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: 1.3rem;
     font-weight: 700;
     color: white;
     align-self: flex-start;
@@ -261,11 +263,11 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
+    padding: 8px 16px;
     background: #ffffff;
     color: #000000;
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 0.95rem;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -317,13 +319,13 @@
 .hardware-gallery-header h2 {
     margin: 8px 0 0;
 
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(1.2rem, 2.8vw, 2.1rem);
 
     font-weight: 700;
 
-    line-height: 1;
+    line-height: 1.25;
 
     color: white;
 }
@@ -331,9 +333,9 @@
 .hardware-gallery-count {
     color: var(--muted);
 
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
-    font-size: .9rem;
+    font-size: 0.7rem;
 
     letter-spacing: 1px;
 
@@ -426,7 +428,7 @@
 
     color: white;
 
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
     font-size: .95rem;
 

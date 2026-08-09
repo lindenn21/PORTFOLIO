@@ -58,10 +58,10 @@
 
 .brand-name {
 
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 1.6rem;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: white;
 
 }
@@ -83,7 +83,7 @@
 .nav-link {
 
     color: #888;
-    font-size: .9rem;
+    font-size: 0.72rem;
     font-weight: 400;
     transition: .3s;
     position: relative;
@@ -185,7 +185,9 @@
 }
 
 .mobile-menu a {
-    padding: 18px 48px;
+    padding: 12px 24px;
+    font-size: 0.58rem;
+    letter-spacing: -0.6px;
     color: #aaa;
     transition: .3s;
 }
@@ -215,6 +217,11 @@
         padding: 0 24px;
     }
 
+    .brand-name {
+        font-size: 0.75rem;
+        letter-spacing: -0.5px;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -234,14 +241,15 @@
         display: flex !important;
         align-items: center;
         justify-content: flex-end;
-        gap: 16px;
+        gap: 8px;
         margin: 0;
         padding: 0;
         list-style: none;
     }
 
     .nav-link {
-        font-size: 0.75rem;
+        font-size: 0.48rem;
+        letter-spacing: -0.8px;
         white-space: nowrap;
     }
 
@@ -250,21 +258,22 @@
     }
 
     .brand-name {
-        font-size: 1rem;
+        font-size: 0.6rem;
+        letter-spacing: -0.5px;
     }
 
     .navbar {
         display: flex !important;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
-        padding: 12px 16px;
+        gap: 8px;
+        padding: 10px 12px;
     }
 
     .nav-links {
         flex: 1;
         justify-content: flex-end;
-        gap: 12px;
+        gap: 8px;
     }
 
 }

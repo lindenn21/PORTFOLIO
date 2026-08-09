@@ -53,7 +53,7 @@
 ========================================= */
 
 .intro-text-wrap {
-    position: sticky;
+    position: relative;
 
     top: 0vh;
     /* 
@@ -82,11 +82,11 @@
 
     text-align: center;
 
-    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-size: clamp(0.95rem, 2.2vw, 1.55rem);
 
-    line-height: 1.5;
+    line-height: 1.8;
 
-    font-weight: 800;
+    font-weight: 400;
 
     color: var(--text-primary);
 
@@ -144,8 +144,8 @@
         margin: 0 !important;
         padding: 0 !important;
 
-        font-size: clamp(1.05rem, 4.5vw, 1.35rem);
-        line-height: 1.6;
+        font-size: clamp(0.7rem, 3.5vw, 0.95rem);
+        line-height: 1.7;
     }
 
     /* INTRO → SKILLS */
@@ -183,8 +183,8 @@
 }
 
 .stack-heading {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem);
     font-weight: 700;
     color: white;
 }
@@ -195,13 +195,14 @@
 }
 
 .stack-pill-btn {
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 1px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: #aaa;
-    font-size: .85rem;
+    font-size: .68rem;
     font-weight: 500;
+    letter-spacing: -0.6px;
     cursor: pointer;
     transition: all .3s ease;
 }
@@ -308,9 +309,12 @@
 }
 
 .stack-icon-item span {
-    font-size: .8rem;
+    font-size: 0.58rem;
     color: #aaa;
     font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: -0.8px;
 }
 
 /* TIMELINE 1, 2, 3 */
@@ -364,16 +368,18 @@
 }
 
 .stack-label-col h4 {
-    font-size: 1.25rem;
+    font-size: 0.92rem;
     color: white;
     font-weight: 600;
     margin-bottom: 8px;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
 }
 
 .stack-label-col p {
-    font-size: .9rem;
+    font-size: 0.72rem;
     color: var(--muted);
-    line-height: 1.65;
+    line-height: 1.6;
 }
 
 /*==================================================
@@ -448,7 +454,7 @@
 
     color: var(--muted);
 
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
     font-size: 1.05rem;
     font-weight: 600;
 
@@ -572,15 +578,15 @@
 /* Degree */
 
 .edu-school-title {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
-    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    font-size: clamp(1rem, 2.2vw, 1.5rem);
 
     font-weight: 700;
 
     color: white;
 
-    line-height: 1.05;
+    line-height: 1.3;
 
     margin: 0 0 10px 0;
 }

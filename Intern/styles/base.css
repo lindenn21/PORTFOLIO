@@ -3,7 +3,7 @@
         Linden Powell Rivera Portfolio
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 *{
     margin:0;
@@ -16,7 +16,7 @@ html{
 }
 
 body{
-    font-family:"Inter",sans-serif;
+    font-family:"Press Start 2P", cursive, monospace, sans-serif;
     background:#0a0a0a;
     color:#e5e5e5;
     overflow-x:hidden;
@@ -85,10 +85,10 @@ HEADINGS
 .section-title,
 .experience-title,
 .works-title{
-    font-family:"Barlow Condensed",sans-serif;
-    font-size:clamp(2.8rem,5vw,4.5rem);
+    font-family:"Press Start 2P", cursive, monospace, sans-serif;
+    font-size:clamp(1.5rem,3.2vw,2.4rem);
     font-weight:700;
-    line-height:1;
+    line-height:1.2;
     color:#ffffff;
     margin-bottom:18px;
 }

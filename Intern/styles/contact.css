@@ -69,13 +69,13 @@
 /* TITLE */
 
 .contact-title {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(1.4rem, 3.5vw, 2.5rem);
 
     font-weight: 700;
 
-    line-height: .9;
+    line-height: 1.25;
 
     color: #fff;
 
@@ -85,7 +85,7 @@
 .contact-desc {
     color: #999;
 
-    font-size: .95rem;
+    font-size: 0.75rem;
 
     line-height: 1.7;
 
@@ -118,9 +118,10 @@
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
-    font-family: "DM Mono", monospace;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
-    font-size: .78rem;
+    font-size: 0.55rem;
+    line-height: 1.5;
 }
 
 .status-label {
@@ -147,9 +148,9 @@
 
     padding-top: 25px;
 
-    font-family: "DM Mono", monospace;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
-    font-size: .82rem;
+    font-size: 0.6rem;
 
     color: #fff;
 
@@ -270,23 +271,27 @@
 .contact-text h3 {
     color: #fff;
 
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
-    font-size: 1.25rem;
+    font-size: 0.65rem;
 
     font-weight: 600;
 
     letter-spacing: .4px;
 
-    margin: 0 0 4px;
+    line-height: 1.5;
+
+    margin: 0 0 6px;
 }
 
 .contact-text p {
     color: #777;
 
-    font-family: "DM Mono", monospace;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
-    font-size: .72rem;
+    font-size: 0.52rem;
+
+    line-height: 1.4;
 
     margin: 0;
 

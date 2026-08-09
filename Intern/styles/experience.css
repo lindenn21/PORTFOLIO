@@ -60,7 +60,7 @@
     min-width: 58px;
     text-align: center;
     color: var(--muted);
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
     font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -156,16 +156,16 @@
 }
 
 .exp-company-title {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
     font-weight: 700;
     color: white;
-    line-height: 1.05;
+    line-height: 1.35;
     margin-bottom: 8px;
 }
 
 .exp-role-date {
-    font-size: 1.05rem;
+    font-size: 0.78rem;
     color: var(--muted);
     font-weight: 500;
     margin-bottom: 20px;
@@ -213,13 +213,14 @@
 }
 
 .exp-stack-pills span {
-    padding: 6px 14px;
+    padding: 5px 10px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #aaa;
-    font-size: .8rem;
+    font-size: .58rem;
     font-weight: 500;
+    letter-spacing: -0.8px;
 }
 
 @media(max-width:991px) {

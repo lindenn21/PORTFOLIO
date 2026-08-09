@@ -389,10 +389,10 @@ const expData = [
         logo: "images/worldciti.png",
         bullets: [
             "Assisted with networking, troubleshooting, and guided web development for school and hospital operations.",
-            "Hands-on technical support, cabling, and maintaining system functionality in an active environment.",
-            "Collaborated on software tools and web interface updates for operational efficiency."
+            "Hands-on technical support, cabling, and maintaining system functionality in an active environment (Hospital and School).",
+            "Collaborated on software tools for operational efficiency."
         ],
-        stack: ["Linux", "Networking", "Python", "HTML", "CSS", "JavaScript"]
+        stack: ["Linux", "Networking", "Troubleshooting", "Installation", "Management", "PHP", "Tailwind", "JS", "HTML"]
     },
     {
         title: "Polytechnic University of the Philippines",

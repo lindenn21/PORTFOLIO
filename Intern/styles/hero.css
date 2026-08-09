@@ -13,6 +13,7 @@
 
 
 
+
 }
 
 .hero-wrap {
@@ -32,10 +33,10 @@
 
 .hero-heading {
 
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: clamp(1.4rem, 3.5vw, 2.5rem);
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1.35;
     color: white;
     margin-bottom: 16px;
 
@@ -50,7 +51,8 @@
 
 .hero-typewriter {
 
-    font-size: 1.2rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
     color: var(--muted);
     margin-bottom: 45px;
     min-height: 1.8em;
@@ -96,11 +98,11 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 14px 28px;
+    padding: 12px 24px;
     border-radius: 1px;
     background: white;
     color: black;
-    font-size: .92rem;
+    font-size: .85rem;
     font-weight: 600;
     transition: .35s;
     text-decoration: none;
@@ -121,12 +123,12 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 14px 28px;
+    padding: 12px 24px;
     border-radius: 1px;
     background: rgba(255, 255, 255, .06);
     border: 1px solid rgba(255, 255, 255, .15);
     color: white;
-    font-size: .92rem;
+    font-size: .85rem;
     font-weight: 500;
     transition: .35s;
     text-decoration: none;
@@ -160,7 +162,7 @@
 .hero-badge strong {
 
     display: block;
-    font-size: .92rem;
+    font-size: .88rem;
     color: white;
     font-weight: 600;
 
@@ -168,7 +170,7 @@
 
 .hero-badge span {
 
-    font-size: .8rem;
+    font-size: .75rem;
     color: var(--muted);
 
 }
@@ -256,11 +258,31 @@
     }
 
     .hero-heading {
-        font-size: clamp(2.5rem, 10vw, 4rem);
+        font-size: clamp(0.95rem, 2.8vw, 1.35rem);
+        line-height: 1.4;
     }
 
     .hero-typewriter {
+        font-size: 0.7rem;
+        letter-spacing: -0.5px;
         justify-content: center;
+    }
+
+    .btn-view-work,
+    .btn-email {
+        font-size: 0.65rem;
+        padding: 8px 16px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-badge strong {
+        font-size: 0.7rem;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-badge span {
+        font-size: 0.58rem;
+        letter-spacing: -0.5px;
     }
 
     .hero-actions {
@@ -290,11 +312,30 @@
     }
 
     .hero-heading {
-        font-size: clamp(2rem, 12vw, 3rem);
+        font-size: clamp(0.8rem, 3.8vw, 1.05rem);
+        line-height: 1.45;
     }
 
     .hero-typewriter {
-        font-size: 1rem;
+        font-size: 0.6rem;
+        letter-spacing: -0.6px;
+    }
+
+    .btn-view-work,
+    .btn-email {
+        font-size: 0.58rem;
+        padding: 7px 14px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-badge strong {
+        font-size: 0.62rem;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-badge span {
+        font-size: 0.52rem;
+        letter-spacing: -0.5px;
     }
 
     .hero-badges {
