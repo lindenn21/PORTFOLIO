@@ -364,6 +364,8 @@
 
     .hero {
         padding: 55px 0 40px;
+        min-height: -webkit-fill-available; /* Safari fallback */
+        min-height: 100svh;                 /* locks to shortest viewport — no jump */
     }
 
     .hero-wrap {
@@ -422,5 +424,12 @@
 
     .hero::before {
         opacity: 0.35;
+        background-image: repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.05) 0px,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px,
+            transparent 10px
+        );
     }
 }

@@ -406,19 +406,32 @@
     }
 
     .contact-grid {
-        grid-template-columns: 1fr;
-
-        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
     }
 
     .contact-card {
-        min-height: 120px;
+        min-height: 100px;
+        padding: 14px 12px;
+    }
 
-        padding: 20px;
+    .contact-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
     }
 
     .contact-text h3 {
-        font-size: 1.15rem;
+        font-size: 0.42rem;
+        letter-spacing: 0;
+        margin-bottom: 4px;
+    }
+
+    .contact-text p {
+        font-size: 0.36rem;
+        line-height: 1.5;
+        letter-spacing: -0.3px;
+        word-break: break-all;
     }
 
 }
