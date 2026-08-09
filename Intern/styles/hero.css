@@ -146,6 +146,41 @@
     text-decoration: none;
 }
 
+/* SCROLL HINT */
+
+.scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 90px;
+    opacity: 0.35;
+    transition: opacity 0.3s;
+}
+
+.scroll-hint:hover {
+    opacity: 0.65;
+}
+
+.scroll-hint-text {
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.45rem;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.scroll-hint-arrow {
+    font-size: 0.9rem;
+    color: #fff;
+    animation: scrollBounce 1.4s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(5px); }
+}
+
 /* HERO BADGES */
 
 
@@ -355,5 +390,9 @@
         align-items: center;
         gap: 12px;
         margin-top: 24px;
+    }
+
+    .scroll-hint {
+        margin-top: 28px;
     }
 }
