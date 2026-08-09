@@ -248,6 +248,12 @@
     margin-bottom: 30px;
 }
 
+.stack-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .stack-card {
     background: rgba(20, 20, 20, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -349,12 +355,12 @@
     background: rgba(255, 255, 255, 0.15);
 }
 
-/* STACK LABELS (3 COLUMNS) */
+/* STACK LABELS */
 
-.stack-labels {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+.stack-label-col {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;
 }
 
 .stack-label-col h4 {
@@ -368,18 +374,6 @@
     font-size: .9rem;
     color: var(--muted);
     line-height: 1.65;
-}
-
-@media (max-width: 600px) {
-    .stack-labels.show {
-        display: none;
-    }
-
-    .stack-labels {
-        display: none;
-    }
-
-
 }
 
 /*==================================================
@@ -621,9 +615,9 @@
         justify-content: center;
     }
 
-    .stack-grid,
-    .stack-labels {
+    .stack-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
     }
 
     .stack-timeline {
