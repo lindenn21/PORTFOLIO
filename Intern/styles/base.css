@@ -32,6 +32,13 @@ img{
 a{
     text-decoration:none;
     color:inherit;
+    outline:none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 3px;
 }
 
 button{

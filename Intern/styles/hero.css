@@ -34,7 +34,7 @@
 .hero-heading {
 
     font-family: "Press Start 2P", cursive, monospace, sans-serif;
-    font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+    font-size: clamp(1rem, 2.8vw, 1.7rem);
     font-weight: 700;
     line-height: 1.35;
     color: white;
@@ -106,12 +106,15 @@
     font-weight: 600;
     transition: .35s;
     text-decoration: none;
+    outline: none;
 
 }
 
 .btn-view-work:hover {
     background: #e0e0e0;
     transform: translateY(-2px);
+    outline: none;
+    text-decoration: none;
 }
 
 .btn-arrow {
@@ -132,12 +135,15 @@
     font-weight: 500;
     transition: .35s;
     text-decoration: none;
+    outline: none;
 
 }
 
 .btn-email:hover {
     background: rgba(255, 255, 255, .12);
     transform: translateY(-2px);
+    outline: none;
+    text-decoration: none;
 }
 
 /* HERO BADGES */
@@ -232,7 +238,7 @@
 @media(max-width:991px) {
 
     .hero {
-        padding: 110px 0 80px;
+        padding: 70px 0 60px;
         min-height: auto;
     }
 
@@ -298,7 +304,7 @@
 @media(max-width:600px) {
 
     .hero {
-        padding: 90px 0 60px;
+        padding: 55px 0 40px;
     }
 
     .hero-wrap {
