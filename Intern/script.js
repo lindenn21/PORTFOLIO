@@ -3,6 +3,94 @@
         Linden Powell Rivera
 =========================================*/
 
+/* =========================================
+   MULTILINGUAL LOADING SCREEN
+   Types "POWELL" in 6 languages/scripts,
+   then fades out to reveal the site.
+========================================= */
+(function () {
+    const LANGUAGES = [
+        { lang: "ENGLISH", word: "TRACE ON" },
+        { lang: "JAPANESE", word: "トレース・オン" },
+        { lang: "KOREAN", word: "트레이스 온" },
+        { lang: "ARABIC", word: "تريس أون" },
+        { lang: "RUSSIAN", word: "ТРЕЙС ОН" },
+        { lang: "CHINESE", word: "描迹开始" },
+        { lang: "ENGLISH", word: "TRACE ON" },
+    ];
+
+    const CHAR_DELAY = 10;   // ms per character typed
+    const HOLD_DELAY = 170;  // ms word stays visible before erasing
+    const ERASE_DELAY = 8;   // ms per character erased
+    const BETWEEN_DELAY = 20;   // ms between entries
+
+    const loaderEl = document.getElementById("site-loader");
+    const typedEl = document.getElementById("loaderTyped");
+    const langEl = document.getElementById("loaderLang");
+    const barEl = document.getElementById("loaderBar");
+
+    if (!loaderEl) return;
+
+    // Block page scroll while loader is showing
+    document.body.style.overflow = "hidden";
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function typeWord(word) {
+        typedEl.textContent = "";
+        for (const char of word) {
+            typedEl.textContent += char;
+            await sleep(CHAR_DELAY);
+        }
+    }
+
+    async function eraseWord() {
+        while (typedEl.textContent.length > 0) {
+            typedEl.textContent = typedEl.textContent.slice(0, -1);
+            await sleep(ERASE_DELAY);
+        }
+    }
+
+    async function runLoader() {
+        const totalDuration = LANGUAGES.length * (
+            LANGUAGES[0].word.length * CHAR_DELAY +
+            HOLD_DELAY +
+            LANGUAGES[0].word.length * ERASE_DELAY +
+            BETWEEN_DELAY
+        );
+
+        // Animate the progress bar
+        barEl.style.transition = `width ${totalDuration}ms linear`;
+        barEl.style.width = "100%";
+
+        for (let i = 0; i < LANGUAGES.length; i++) {
+            const { lang, word } = LANGUAGES[i];
+            langEl.textContent = lang;
+            await typeWord(word);
+            await sleep(HOLD_DELAY);
+
+            // On the last word, don't erase — just fade out
+            if (i < LANGUAGES.length - 1) {
+                await eraseWord();
+                await sleep(BETWEEN_DELAY);
+            }
+        }
+
+        // Fade out loader
+        loaderEl.classList.add("fade-out");
+        document.body.style.overflow = "";
+
+        // Remove from DOM after transition
+        loaderEl.addEventListener("transitionend", () => {
+            loaderEl.remove();
+        }, { once: true });
+    }
+
+    runLoader();
+})();
+
 async function includeHTML(id, file) {
     const element = document.getElementById(id);
     if (!element) return;
@@ -129,7 +217,7 @@ function heroTypewriter() {
     const target = document.getElementById("heroTyped");
     if (!target) return;
 
-    const phrases = ["Hardware & Software student", "Doing side quests.."];
+    const phrases = ["Loeee! I'm Linden.", "Hardware & Software student", "Doing side quests..", "GRAHHH!!!"];
     let phraseIdx = 0;
     let charIdx = 0;
     let isDeleting = false;
@@ -144,7 +232,7 @@ function heroTypewriter() {
             charIdx++;
         }
 
-        let speed = isDeleting ? 40 : 80;
+        let speed = isDeleting ? 40 : 60;
 
         if (!isDeleting && charIdx === currentPhrase.length) {
             speed = 2000;
