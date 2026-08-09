@@ -240,22 +240,22 @@
 
 }
 
-/* PROFILE IMAGE (CIRCLE) */
+/* PROFILE IMAGE (CYBER CUT FRAME) */
 
 .profile-hero {
-
     width: 100%;
-    max-width: 420px;
+    max-width: 295px;
     margin-left: auto;
+    margin-top: -50px;
     position: relative;
-    aspect-ratio: 1;
-    border-radius: 50%;
+    aspect-ratio: 4 / 4.5;
+    border-radius: 0;
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, .12);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, .6);
+    clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+    background: #0d0d0d;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
     animation: heroFadeIn 1s ease forwards;
     opacity: 0;
-
 }
 
 .profile-hero img {
@@ -263,11 +263,28 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    transition: .6s;
+    filter: grayscale(15%);
+    transition: transform .5s ease, filter .5s ease;
 }
 
 .profile-hero:hover img {
     transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.profile-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+    transition: border-color 0.3s ease;
+    z-index: 2;
+}
+
+.profile-hero:hover::after {
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 @keyframes heroSlideIn {
@@ -311,8 +328,8 @@
 
     .profile-hero {
         order: -1;
-        width: 65%;
-        max-width: 300px;
+        width: 60%;
+        max-width: 240px;
         margin: 0 auto;
     }
 
@@ -374,8 +391,8 @@
     }
 
     .profile-hero {
-        width: 55%;
-        max-width: 240px;
+        width: 50%;
+        max-width: 190px;
     }
 
     .hero-heading {
