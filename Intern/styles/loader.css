@@ -6,7 +6,7 @@
     position: fixed;
     inset: 0;
     z-index: 99999;
-    background: #0a0a0a;
+    background: var(--theme-loader-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,12 +64,12 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: rgba(255,255,255,0.06);
+    background: var(--theme-loader-bar-track);
 }
 
 .loader-bar {
     height: 100%;
-    background: white;
+    background: var(--theme-loader-bar-fill);
     width: 0%;
     transition: width linear;
 }

@@ -1,0 +1,363 @@
+/*==================================================
+    THEME.CSS — Dark / Light Mode Variables & Toggle
+    Dark = Original Monochrome Design (default)
+    Light = Warm-white alternative
+==================================================*/
+
+/* =========================================
+   DARK THEME (DEFAULT — preserves originals)
+========================================= */
+
+:root,
+[data-theme="dark"] {
+    /* Backgrounds */
+    --theme-bg: #111111;
+    --theme-bg2: #111111;
+    --theme-bg-card: rgba(20, 20, 20, 0.7);
+    --theme-bg-card-solid: rgba(15, 15, 15, 0.8);
+    /* --theme-bg-surface: #0d0d0d; */
+    --theme-bg-surface: #111111;
+    --theme-bg-surface-hover: #141414;
+    --theme-bg-logo: #000000;
+
+    /* Text */
+    --theme-text-primary: #f5f5f5;
+    --theme-text-heading: #ffffff;
+    --theme-text-body: #d0d0d0;
+    --theme-text-muted: #888888;
+    --theme-text-subtle: #aaaaaa;
+    --theme-text-faint: #777777;
+    --theme-text-dimmer: #666666;
+    --theme-text-icon: #e0e0e0;
+
+    /* Borders */
+    --theme-border: rgba(255, 255, 255, 0.1);
+    --theme-border-subtle: rgba(255, 255, 255, 0.08);
+    --theme-border-medium: rgba(255, 255, 255, 0.12);
+    --theme-border-strong: rgba(255, 255, 255, 0.14);
+    --theme-border-hover: rgba(255, 255, 255, 0.3);
+    --theme-border-active: rgba(255, 255, 255, 0.35);
+    --theme-border-accent: rgba(255, 255, 255, 0.2);
+    --theme-border-faint: rgba(255, 255, 255, 0.06);
+    --theme-border-name: rgba(255, 255, 255, 0.3);
+    --theme-border-profile: rgba(255, 255, 255, 0.2);
+    --theme-border-profile-hover: rgba(255, 255, 255, 0.5);
+
+    /* Buttons */
+    --theme-btn-primary-bg: #ffffff;
+    --theme-btn-primary-text: #000000;
+    --theme-btn-primary-hover: #e0e0e0;
+    --theme-btn-ghost-bg: rgba(255, 255, 255, 0.06);
+    --theme-btn-ghost-border: rgba(255, 255, 255, 0.15);
+    --theme-btn-ghost-hover: rgba(255, 255, 255, 0.12);
+    --theme-btn-ghost-text: #ffffff;
+
+    /* Pill / Tag */
+    --theme-pill-bg: rgba(255, 255, 255, 0.05);
+    --theme-pill-border: rgba(255, 255, 255, 0.12);
+    --theme-pill-text: #aaaaaa;
+    --theme-pill-active-bg: #ffffff;
+    --theme-pill-active-text: #000000;
+    --theme-pill-active-border: #ffffff;
+    --theme-tag-bg: rgba(255, 255, 255, 0.05);
+    --theme-tag-border: rgba(255, 255, 255, 0.1);
+    --theme-tag-text: #cccccc;
+
+    /* Nav */
+    --theme-nav-bg: rgba(10, 10, 10, 0.88);
+    --theme-nav-border: rgba(255, 255, 255, 0.08);
+    --theme-nav-link: #888888;
+    --theme-nav-link-hover: #ffffff;
+    --theme-nav-link-underline: #ffffff;
+    --theme-nav-toggler-bg: rgba(255, 255, 255, 0.06);
+    --theme-nav-toggler-bar: #ffffff;
+    --theme-mobile-bg: rgba(10, 10, 10, 0.98);
+    --theme-mobile-link: #aaaaaa;
+    --theme-mobile-hover-bg: rgba(255, 255, 255, 0.08);
+
+    /* Overlays & Effects */
+    --theme-overlay-glow1: rgba(255, 255, 255, 0.03);
+    --theme-overlay-glow2: rgba(255, 255, 255, 0.02);
+    --theme-noise-dot: white;
+    --theme-scanline: rgba(255, 255, 255, 0.07);
+    --theme-scanline-mobile: rgba(255, 255, 255, 0.05);
+    --theme-shadow: rgba(0, 0, 0, 0.5);
+    --theme-shadow-heavy: rgba(0, 0, 0, 0.7);
+
+    /* Scrollbar */
+    --theme-scrollbar-track: #0a0a0a;
+    --theme-scrollbar-thumb: #333333;
+    --theme-scrollbar-thumb-hover: #555555;
+
+    /* Selection */
+    --theme-selection-bg: #ffffff;
+    --theme-selection-text: #0a0a0a;
+
+    /* Focus */
+    --theme-focus-ring: rgba(255, 255, 255, 0.4);
+    --theme-focus-solid: white;
+
+    /* Loader */
+    --theme-loader-bg: #0a0a0a;
+    --theme-loader-bar-track: rgba(255, 255, 255, 0.06);
+    --theme-loader-bar-fill: white;
+
+    /* Timeline */
+    --theme-timeline-bg: #181818;
+    --theme-timeline-border: rgba(255, 255, 255, 0.2);
+    --theme-timeline-active-bg: rgba(255, 255, 255, 0.15);
+    --theme-timeline-line: rgba(255, 255, 255, 0.15);
+
+    /* Profile hero */
+    --theme-profile-bg: #0d0d0d;
+
+    /* Image overlay gradient */
+    --theme-img-overlay: rgba(0, 0, 0, 0.88);
+
+    /* Cursor (contact section) */
+    --theme-cursor-bg: #ffffff;
+
+    /* Try-me button shadow */
+    --theme-try-shadow: rgba(255, 255, 255, 0.1);
+    --theme-try-shadow-hover: rgba(255, 255, 255, 0.25);
+
+    /* Contact */
+    --theme-contact-desc: #999999;
+    --theme-contact-status-label: #666666;
+    --theme-terminal-dot: #777777;
+    --theme-terminal-dot-first: #ffffff;
+
+    /* Stack icon filter (light makes grayscale bright) */
+    --theme-icon-filter: grayscale(100%) brightness(1.2);
+    --theme-icon-filter-hover: grayscale(0%) brightness(1);
+
+    /* Photo filter */
+    --theme-photo-filter: grayscale(15%);
+    --theme-photo-filter-hover: grayscale(0%);
+
+    /* Edu logo border */
+    --theme-edu-logo-border: rgba(0, 0, 0, 0.967);
+}
+
+
+/* =========================================
+   LIGHT THEME
+========================================= */
+
+[data-theme="light"] {
+    /* Backgrounds */
+    --theme-bg: #F3F3EF;
+    --theme-bg2: #EAEAE5;
+    --theme-bg-card: rgba(255, 255, 255, 0.8);
+    --theme-bg-card-solid: rgba(255, 255, 255, 0.9);
+    --theme-bg-surface: #ffffff;
+    --theme-bg-surface-hover: #f0f0ec;
+    --theme-bg-logo: #ffffff;
+
+    /* Text */
+    --theme-text-primary: #111111;
+    --theme-text-heading: #111111;
+    --theme-text-body: #333333;
+    --theme-text-muted: #555555;
+    --theme-text-subtle: #555555;
+    --theme-text-faint: #777777;
+    --theme-text-dimmer: #888888;
+    --theme-text-icon: #333333;
+
+    /* Borders */
+    --theme-border: rgba(0, 0, 0, 0.1);
+    --theme-border-subtle: rgba(0, 0, 0, 0.07);
+    --theme-border-medium: rgba(0, 0, 0, 0.12);
+    --theme-border-strong: rgba(0, 0, 0, 0.14);
+    --theme-border-hover: rgba(0, 0, 0, 0.3);
+    --theme-border-active: rgba(0, 0, 0, 0.35);
+    --theme-border-accent: rgba(0, 0, 0, 0.2);
+    --theme-border-faint: rgba(0, 0, 0, 0.06);
+    --theme-border-name: rgba(0, 0, 0, 0.25);
+    --theme-border-profile: rgba(0, 0, 0, 0.12);
+    --theme-border-profile-hover: rgba(0, 0, 0, 0.35);
+
+    /* Buttons */
+    --theme-btn-primary-bg: #111111;
+    --theme-btn-primary-text: #ffffff;
+    --theme-btn-primary-hover: #333333;
+    --theme-btn-ghost-bg: rgba(0, 0, 0, 0.05);
+    --theme-btn-ghost-border: rgba(0, 0, 0, 0.15);
+    --theme-btn-ghost-hover: rgba(0, 0, 0, 0.10);
+    --theme-btn-ghost-text: #111111;
+
+    /* Pill / Tag */
+    --theme-pill-bg: rgba(0, 0, 0, 0.04);
+    --theme-pill-border: rgba(0, 0, 0, 0.12);
+    --theme-pill-text: #555555;
+    --theme-pill-active-bg: #111111;
+    --theme-pill-active-text: #ffffff;
+    --theme-pill-active-border: #111111;
+    --theme-tag-bg: rgba(0, 0, 0, 0.04);
+    --theme-tag-border: rgba(0, 0, 0, 0.1);
+    --theme-tag-text: #444444;
+
+    /* Nav */
+    --theme-nav-bg: rgba(243, 243, 239, 0.92);
+    --theme-nav-border: rgba(0, 0, 0, 0.08);
+    --theme-nav-link: #555555;
+    --theme-nav-link-hover: #111111;
+    --theme-nav-link-underline: #111111;
+    --theme-nav-toggler-bg: rgba(0, 0, 0, 0.06);
+    --theme-nav-toggler-bar: #111111;
+    --theme-mobile-bg: rgba(243, 243, 239, 0.98);
+    --theme-mobile-link: #555555;
+    --theme-mobile-hover-bg: rgba(0, 0, 0, 0.06);
+
+    /* Overlays & Effects */
+    --theme-overlay-glow1: rgba(0, 0, 0, 0.015);
+    --theme-overlay-glow2: rgba(0, 0, 0, 0.01);
+    --theme-noise-dot: black;
+    --theme-scanline: rgba(0, 0, 0, 0.04);
+    --theme-scanline-mobile: rgba(0, 0, 0, 0.03);
+    --theme-shadow: rgba(0, 0, 0, 0.1);
+    --theme-shadow-heavy: rgba(0, 0, 0, 0.15);
+
+    /* Scrollbar */
+    --theme-scrollbar-track: #F3F3EF;
+    --theme-scrollbar-thumb: #c0c0c0;
+    --theme-scrollbar-thumb-hover: #999999;
+
+    /* Selection */
+    --theme-selection-bg: #111111;
+    --theme-selection-text: #F3F3EF;
+
+    /* Focus */
+    --theme-focus-ring: rgba(0, 0, 0, 0.3);
+    --theme-focus-solid: #111111;
+
+    /* Loader */
+    --theme-loader-bg: #F3F3EF;
+    --theme-loader-bar-track: rgba(0, 0, 0, 0.06);
+    --theme-loader-bar-fill: #111111;
+
+    /* Timeline */
+    --theme-timeline-bg: #eaeae5;
+    --theme-timeline-border: rgba(0, 0, 0, 0.2);
+    --theme-timeline-active-bg: rgba(0, 0, 0, 0.08);
+    --theme-timeline-line: rgba(0, 0, 0, 0.15);
+
+    /* Profile hero */
+    --theme-profile-bg: #e8e8e3;
+
+    /* Image overlay gradient */
+    --theme-img-overlay: rgba(0, 0, 0, 0.75);
+
+    /* Cursor (contact section) */
+    --theme-cursor-bg: #111111;
+
+    /* Try-me button shadow */
+    --theme-try-shadow: rgba(0, 0, 0, 0.08);
+    --theme-try-shadow-hover: rgba(0, 0, 0, 0.2);
+
+    /* Contact */
+    --theme-contact-desc: #666666;
+    --theme-contact-status-label: #888888;
+    --theme-terminal-dot: #bbbbbb;
+    --theme-terminal-dot-first: #111111;
+
+    /* Stack icon filter (solid black in light mode, grayscale on hover becomes brand color) */
+    --theme-icon-filter: grayscale(100%) brightness(0);
+    --theme-icon-filter-hover: grayscale(0%) brightness(1);
+
+    /* Photo filter */
+    --theme-photo-filter: grayscale(15%);
+    --theme-photo-filter-hover: grayscale(0%);
+
+    /* Edu logo border */
+    --theme-edu-logo-border: rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   THEME TOGGLE BUTTON (Hard-edged & Compact)
+========================================= */
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    height: 24px;
+    border: 1px solid var(--theme-border-medium);
+    border-radius: 0;
+    overflow: hidden;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    margin-left: 14px;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.theme-toggle__option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7px;
+    height: 100%;
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: 0.38rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    user-select: none;
+    border: none;
+    background: transparent;
+    color: var(--theme-text-muted);
+    cursor: pointer;
+    line-height: 1;
+    pointer-events: none;
+    /* Allows click anywhere on container to toggle */
+}
+
+.theme-toggle__option:first-child {
+    border-right: 1px solid var(--theme-border-medium);
+}
+
+.theme-toggle__option.active {
+    background: var(--theme-btn-primary-bg);
+    color: var(--theme-btn-primary-text);
+}
+
+/* Transition for body background */
+body,
+.top-nav,
+.mobile-menu,
+.contact-section,
+.contact-terminal,
+.contact-card,
+#site-loader {
+    transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+
+/* =========================================
+   MOBILE: Theme toggle in nav
+========================================= */
+
+@media (max-width: 991px) {
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 0;
+        height: 20px;
+    }
+
+    .theme-toggle__option {
+        font-size: 0.32rem;
+        padding: 0 4px;
+    }
+}

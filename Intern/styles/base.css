@@ -5,85 +5,91 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
-body{
-    font-family:"Press Start 2P", cursive, monospace, sans-serif;
-    background:#0a0a0a;
-    color:#e5e5e5;
-    overflow-x:hidden;
-    position:relative;
-    min-height:100vh;
+body {
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    /* background:var(--theme-bg); */
+    background: var(--theme-bg);
+    color: var(--theme-text-primary);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
 }
 
-img{
-    display:block;
-    max-width:100%;
+img {
+    display: block;
+    max-width: 100%;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
-    outline:none;
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
 }
+
+.description {
+    font-family: "IBM Plex Mono", Monospace !important;
+}
+
 
 a:focus-visible,
 button:focus-visible {
-    outline: 1px solid rgba(255, 255, 255, 0.4);
+    outline: 1px solid var(--theme-focus-ring);
     outline-offset: 3px;
 }
 
-button{
-    border:none;
-    background:none;
-    cursor:pointer;
-    font-family:inherit;
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-ul{
-    list-style:none;
+ul {
+    list-style: none;
 }
 
 /*-----------------------------
 MONOCHROME THEME VARIABLES
 ------------------------------*/
 
-:root{
-    --bg:#0a0a0a;
-    --bg2:#121212;
-    --card:rgba(20,20,20,.8);
-    --border:rgba(255,255,255,.1);
-    --text:#f5f5f5;
-    --muted:#888888;
-    --accent:#ffffff;
-    --accent-gray:#b0b0b0;
-    --dark-pill:rgba(255,255,255,.06);
-    --dark-pill-active:rgba(255,255,255,.18);
-    --radius:20px;
-    --shadow:0 15px 45px rgba(0,0,0,.5);
+:root {
+    --bg: #0a0a0a;
+    --bg2: #121212;
+    --card: rgba(20, 20, 20, .8);
+    --border: rgba(255, 255, 255, .1);
+    --text: #f5f5f5;
+    --muted: #888888;
+    --accent: #ffffff;
+    --accent-gray: #b0b0b0;
+    --dark-pill: rgba(255, 255, 255, .06);
+    --dark-pill-active: rgba(255, 255, 255, .18);
+    --radius: 20px;
+    --shadow: 0 15px 45px rgba(0, 0, 0, .5);
 }
 
 /*-----------------------------
 CONTAINER & SECTION
 ------------------------------*/
 
-.container{
-    width:min(1240px,92%);
-    margin:auto;
+.container {
+    width: min(1240px, 92%);
+    margin: auto;
 }
 
-section{
-    position:relative;
-    padding:120px 0;
+section {
+    position: relative;
+    padding: 120px 0;
 }
 
 /*-----------------------------
@@ -92,105 +98,105 @@ HEADINGS
 
 .section-title,
 .experience-title,
-.works-title{
-    font-family:"Press Start 2P", cursive, monospace, sans-serif;
-    font-size:clamp(1.5rem,3.2vw,2.4rem);
-    font-weight:700;
-    line-height:1.2;
-    color:#ffffff;
-    margin-bottom:18px;
+.works-title {
+    font-family: "Press Start 2P", cursive, monospace, sans-serif;
+    font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--theme-text-heading);
+    margin-bottom: 18px;
 }
 
-.section-subtitle{
-    color:var(--muted);
-    font-size:1rem;
-    line-height:1.8;
-    max-width:700px;
+.section-subtitle {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 700px;
 }
 
 /*-----------------------------
 BACKGROUND NOISE / SUBTLE GRADIENT
 ------------------------------*/
 
-body::before{
-    content:"";
-    position:fixed;
-    width:800px;
-    height:800px;
-    left:-250px;
-    top:-200px;
-    background:radial-gradient(circle, rgba(255,255,255,.03), transparent 70%);
-    filter:blur(80px);
-    pointer-events:none;
-    z-index:-10;
+body::before {
+    content: "";
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    left: -250px;
+    top: -200px;
+    background: radial-gradient(circle, var(--theme-overlay-glow1), transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -10;
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    width:700px;
-    height:700px;
-    right:-200px;
-    bottom:-200px;
-    background:radial-gradient(circle, rgba(255,255,255,.02), transparent 70%);
-    filter:blur(90px);
-    pointer-events:none;
-    z-index:-10;
+body::after {
+    content: "";
+    position: fixed;
+    width: 700px;
+    height: 700px;
+    right: -200px;
+    bottom: -200px;
+    background: radial-gradient(circle, var(--theme-overlay-glow2), transparent 70%);
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: -10;
 }
 
-.noise{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    opacity:.02;
-    z-index:-8;
-    background-image:radial-gradient(circle, white 1px, transparent 1px);
-    background-size:10px 10px;
+.noise {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .02;
+    z-index: -8;
+    background-image: radial-gradient(circle, var(--theme-noise-dot) 1px, transparent 1px);
+    background-size: 10px 10px;
 }
 
 /*-----------------------------
 REVEAL ANIMATIONS
 ------------------------------*/
 
-[data-animate]{
-    opacity:0;
-    transform:translateY(40px);
-    transition:opacity .7s ease, transform .7s ease;
+[data-animate] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .7s ease, transform .7s ease;
 }
 
-[data-animate].show{
-    opacity:1;
-    transform:none;
+[data-animate].show {
+    opacity: 1;
+    transform: none;
 }
 
 /*-----------------------------
 SCROLLBAR & SELECTION
 ------------------------------*/
 
-::-webkit-scrollbar{
-    width:8px;
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-::-webkit-scrollbar-track{
-    background:#0a0a0a;
+::-webkit-scrollbar-track {
+    background: var(--theme-scrollbar-track);
 }
 
-::-webkit-scrollbar-thumb{
-    background:#333333;
-    border-radius:50px;
+::-webkit-scrollbar-thumb {
+    background: var(--theme-scrollbar-thumb);
+    border-radius: 50px;
 }
 
-::-webkit-scrollbar-thumb:hover{
-    background:#555555;
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-scrollbar-thumb-hover);
 }
 
-::selection{
-    background:#ffffff;
-    color:#0a0a0a;
+::selection {
+    background: var(--theme-selection-bg);
+    color: var(--theme-selection-text);
 }
 
-@media(max-width:991px){
-    section{
-        padding:90px 0;
+@media(max-width:991px) {
+    section {
+        padding: 90px 0;
     }
 }

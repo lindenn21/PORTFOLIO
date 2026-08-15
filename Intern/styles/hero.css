@@ -20,24 +20,42 @@
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    background-image: repeating-linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.07) 0px,
-        rgba(255, 255, 255, 0.07) 1px,
-        transparent 1px,
-        transparent 4px
-    );
+    background-image: repeating-linear-gradient(0deg,
+            var(--theme-scanline) 0px,
+            var(--theme-scanline) 1px,
+            transparent 1px,
+            transparent 4px);
     animation: scanlineFlicker 8s linear infinite;
 }
 
 @keyframes scanlineFlicker {
-    0%   { opacity: 1; }
-    48%  { opacity: 1; }
-    49%  { opacity: 0.85; }
-    50%  { opacity: 1; }
-    97%  { opacity: 1; }
-    98%  { opacity: 0.9; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    48% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 0.85;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    97% {
+        opacity: 1;
+    }
+
+    98% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .hero-wrap {
@@ -61,14 +79,14 @@
     font-size: clamp(1rem, 2.8vw, 1.7rem);
     font-weight: 700;
     line-height: 1.35;
-    color: white;
+    color: var(--theme-text-heading);
     margin-bottom: 16px;
 
 }
 
 .hero-heading .name-accent {
-    color: #ffffff;
-    border-bottom: 2px solid rgba(255, 255, 255, .3);
+    color: var(--theme-text-heading);
+    border-bottom: 2px solid var(--theme-border-name);
 }
 
 /* TYPEWRITER */
@@ -87,7 +105,7 @@
 
 .type-cursor {
 
-    color: white;
+    color: var(--theme-text-heading);
     font-weight: 300;
     animation: cursorBlink .8s step-end infinite;
     margin-left: 2px;
@@ -124,8 +142,8 @@
     gap: 10px;
     padding: 12px 24px;
     border-radius: 1px;
-    background: white;
-    color: black;
+    background: var(--theme-btn-primary-bg);
+    color: var(--theme-btn-primary-text);
     font-size: .85rem;
     font-weight: 600;
     transition: .35s;
@@ -135,7 +153,7 @@
 }
 
 .btn-view-work:hover {
-    background: #e0e0e0;
+    background: var(--theme-btn-primary-hover);
     transform: translateY(-2px);
     outline: none;
     text-decoration: none;
@@ -152,9 +170,9 @@
     gap: 10px;
     padding: 12px 24px;
     border-radius: 1px;
-    background: rgba(255, 255, 255, .06);
-    border: 1px solid rgba(255, 255, 255, .15);
-    color: white;
+    background: var(--theme-btn-ghost-bg);
+    border: 1px solid var(--theme-btn-ghost-border);
+    color: var(--theme-btn-ghost-text);
     font-size: .85rem;
     font-weight: 500;
     transition: .35s;
@@ -164,7 +182,7 @@
 }
 
 .btn-email:hover {
-    background: rgba(255, 255, 255, .12);
+    background: var(--theme-btn-ghost-hover);
     transform: translateY(-2px);
     outline: none;
     text-decoration: none;
@@ -190,19 +208,26 @@
     font-family: "Press Start 2P", monospace;
     font-size: 0.45rem;
     letter-spacing: 2px;
-    color: #fff;
+    color: var(--theme-text-heading);
     text-transform: uppercase;
 }
 
 .scroll-hint-arrow {
     font-size: 0.9rem;
-    color: #fff;
+    color: var(--theme-text-heading);
     animation: scrollBounce 1.4s ease-in-out infinite;
 }
 
 @keyframes scrollBounce {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(5px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
 }
 
 /* HERO BADGES */
@@ -228,7 +253,7 @@
 
     display: block;
     font-size: .88rem;
-    color: white;
+    color: var(--theme-text-heading);
     font-weight: 600;
 
 }
@@ -252,8 +277,8 @@
     border-radius: 0;
     overflow: hidden;
     clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
-    background: #0d0d0d;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    background: var(--theme-profile-bg);
+    box-shadow: 0 20px 50px var(--theme-shadow-heavy);
     animation: heroFadeIn 1s ease forwards;
     opacity: 0;
 }
@@ -263,13 +288,13 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    filter: grayscale(15%);
+    filter: var(--theme-photo-filter);
     transition: transform .5s ease, filter .5s ease;
 }
 
 .profile-hero:hover img {
     transform: scale(1.05);
-    filter: grayscale(0%);
+    filter: var(--theme-photo-filter-hover);
 }
 
 .profile-hero::after {
@@ -277,14 +302,14 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--theme-border-profile);
     clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
     transition: border-color 0.3s ease;
     z-index: 2;
 }
 
 .profile-hero:hover::after {
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: var(--theme-border-profile-hover);
 }
 
 @keyframes heroSlideIn {
@@ -350,9 +375,27 @@
         justify-content: center;
     }
 
+    /* .btn-view-work,
+    .btn-email {
+        font-size: 0.68rem;
+        padding: 8px 16px;
+        letter-spacing: -0.5px;
+        white-space: normal;
+        overflow-wrap: break-word;
+    } */
+
     .btn-view-work,
     .btn-email {
-        font-size: 0.65rem;
+        width: 162px;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        font-size: 0.68rem;
         padding: 8px 16px;
         letter-spacing: -0.5px;
     }
@@ -381,8 +424,10 @@
 
     .hero {
         padding: 55px 0 40px;
-        min-height: -webkit-fill-available; /* Safari fallback */
-        min-height: 100svh;                 /* locks to shortest viewport — no jump */
+        min-height: -webkit-fill-available;
+        /* Safari fallback */
+        min-height: 100svh;
+        /* locks to shortest viewport — no jump */
     }
 
     .hero-wrap {
@@ -441,12 +486,10 @@
 
     .hero::before {
         opacity: 0.35;
-        background-image: repeating-linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.05) 0px,
-            rgba(255, 255, 255, 0.05) 1px,
-            transparent 1px,
-            transparent 10px
-        );
+        background-image: repeating-linear-gradient(0deg,
+                var(--theme-scanline-mobile) 0px,
+                var(--theme-scanline-mobile) 1px,
+                transparent 1px,
+                transparent 10px);
     }
 }

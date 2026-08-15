@@ -118,6 +118,7 @@ async function loadPortfolio() {
 document.addEventListener("DOMContentLoaded", loadPortfolio);
 
 function initializePortfolio() {
+    initThemeToggle();
     mobileNavigation();
     navbarScrollState();
     activeNavigation();
@@ -129,6 +130,59 @@ function initializePortfolio() {
     educationCarousel();
     projectCarousel();
     smoothScrolling();
+}
+
+/*=====================================================
+            THEME TOGGLE SYSTEM
+=====================================================*/
+
+function getSavedOrSystemTheme() {
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme === "dark" || savedTheme === "light") {
+        return savedTheme;
+    }
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+        return "light";
+    }
+    return "dark";
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+
+    // Update active class on toggle options
+    const toggleOptions = document.querySelectorAll(".theme-toggle__option");
+    toggleOptions.forEach(btn => {
+        if (btn.dataset.themeVal === theme) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    });
+}
+
+function initThemeToggle() {
+    const currentTheme = getSavedOrSystemTheme();
+    applyTheme(currentTheme);
+
+    const toggles = document.querySelectorAll(".theme-toggle");
+    toggles.forEach(toggleEl => {
+        toggleEl.addEventListener("click", () => {
+            const current = document.documentElement.getAttribute("data-theme") || "dark";
+            const nextTheme = current === "dark" ? "light" : "dark";
+            localStorage.setItem("portfolio-theme", nextTheme);
+            applyTheme(nextTheme);
+        });
+    });
+
+    // Listen for system theme changes if no local storage preference is set
+    if (window.matchMedia) {
+        window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", e => {
+            if (!localStorage.getItem("portfolio-theme")) {
+                applyTheme(e.matches ? "light" : "dark");
+            }
+        });
+    }
 }
 
 /*=====================================================

@@ -44,9 +44,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #aaa;
+    color: var(--theme-text-subtle);
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--theme-border-medium);
     border-radius: 1px;
     font-size: 1.25rem;
     line-height: 1;
@@ -55,9 +55,9 @@
 }
 
 .carousel-arrow:hover {
-    color: white;
-    border-color: rgba(255, 255, 255, 0.35);
-    background: rgba(255, 255, 255, 0.05);
+    color: var(--theme-nav-link-hover);
+    border-color: var(--theme-border-active);
+    background: var(--theme-pill-bg);
 }
 
 .carousel-arrow:active {
@@ -65,7 +65,7 @@
 }
 
 .carousel-arrow:focus-visible {
-    outline: 2px solid white;
+    outline: 2px solid var(--theme-focus-solid);
     outline-offset: 3px;
 }
 
@@ -92,12 +92,12 @@
     grid-template-columns: 1fr 1fr auto;
     gap: 50px;
     align-items: center;
-    background: rgba(15, 15, 15, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--theme-bg-card-solid);
+    border: 1px solid var(--theme-border-subtle);
     border-radius: 1px;
     padding: 40px;
     backdrop-filter: blur(16px);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 60px var(--theme-shadow);
 }
 
 .featured-project-card.slide-next {
@@ -141,8 +141,8 @@
     border-radius: 1px;
     overflow: hidden;
     aspect-ratio: 4/3;
-    background: #000000;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--theme-bg-logo);
+    border: 1px solid var(--theme-border-subtle);
 }
 
 .fp-image img {
@@ -159,7 +159,7 @@
 .fp-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, transparent 60%);
+    background: linear-gradient(to top, var(--theme-img-overlay) 0%, transparent 60%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -170,13 +170,13 @@
     font-family: "Press Start 2P", cursive, monospace, sans-serif;
     font-size: 1.15rem;
     line-height: 1.3;
-    color: white;
+    color: #ffffff;
     margin-bottom: 6px;
 }
 
 .fp-image-overlay span {
     font-size: .85rem;
-    color: #aaa;
+    color: #aaaaaa;
 }
 
 /* DETAILS */
@@ -188,7 +188,7 @@
 
 .fp-label {
     font-size: .75rem;
-    color: white;
+    color: var(--theme-text-heading);
     letter-spacing: 2px;
     font-weight: 600;
     margin-top: 20px;
@@ -201,8 +201,8 @@
 }
 
 .fp-desc {
-    font-size: 0.72rem;
-    color: #d0d0d0;
+    font-size: 0.88rem;
+    color: var(--theme-text-body);
     line-height: 1.65;
 }
 
@@ -215,7 +215,7 @@
 .fp-features li {
     font-size: .88rem;
     color: var(--muted);
-    line-height: 1.6;
+    line-height: 1.65;
     position: relative;
     padding-left: 16px;
     margin-bottom: 4px;
@@ -223,7 +223,7 @@
 
 .fp-features li::before {
     content: "•";
-    color: white;
+    color: var(--theme-text-heading);
     position: absolute;
     left: 0;
 }
@@ -237,9 +237,9 @@
 .fp-stack span {
     padding: 5px 10px;
     border-radius: 1px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ccc;
+    background: var(--theme-tag-bg);
+    border: 1px solid var(--theme-tag-border);
+    color: var(--theme-tag-text);
     font-size: .58rem;
     letter-spacing: -0.8px;
 }
@@ -250,7 +250,7 @@
     font-family: "Press Start 2P", cursive, monospace, sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
-    color: white;
+    color: var(--theme-text-heading);
     align-self: flex-start;
 }
 
@@ -264,8 +264,8 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background: #ffffff;
-    color: #000000;
+    background: var(--theme-btn-primary-bg);
+    color: var(--theme-btn-primary-text);
     font-family: "Press Start 2P", cursive, monospace, sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
@@ -274,15 +274,15 @@
     text-decoration: none;
     border-radius: 1px;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px var(--theme-try-shadow);
     z-index: 5;
 }
 
 .fp-try-btn:hover {
-    background: #e0e0e0;
-    color: #000000;
+    background: var(--theme-btn-primary-hover);
+    color: var(--theme-btn-primary-text);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 20px var(--theme-try-shadow-hover);
     text-decoration: none;
 }
 
@@ -313,7 +313,7 @@
 
     padding-bottom: 16px;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--theme-border);
 }
 
 .hardware-gallery-header h2 {
@@ -327,7 +327,7 @@
 
     line-height: 1.25;
 
-    color: white;
+    color: var(--theme-text-heading);
 }
 
 .hardware-gallery-count {
@@ -362,9 +362,9 @@
 
     margin: 0;
 
-    background: #080808;
+    background: var(--theme-bg-surface);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--theme-border-subtle);
 
     overflow: hidden;
 
@@ -426,7 +426,7 @@
 
     gap: 10px;
 
-    color: white;
+    color: #ffffff;
 
     font-family: "Press Start 2P", cursive, monospace, sans-serif;
 
@@ -438,7 +438,7 @@
 }
 
 .hardware-photo figcaption span {
-    color: #777;
+    color: #aaaaaa;
 
     font-size: .75rem;
 

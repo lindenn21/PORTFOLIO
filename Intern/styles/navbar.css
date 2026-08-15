@@ -18,10 +18,10 @@
 
     padding: 0 48px;
 
-    background: rgba(10, 10, 10, .88);
+    background: var(--theme-nav-bg);
     backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    border-bottom: 1px solid var(--theme-nav-border);
 
     z-index: 999;
 
@@ -62,7 +62,7 @@
     font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: white;
+    color: var(--theme-text-heading);
 
 }
 
@@ -82,7 +82,7 @@
 
 .nav-link {
 
-    color: #888;
+    color: var(--theme-nav-link);
     font-size: 0.72rem;
     font-weight: 400;
     transition: .3s;
@@ -92,11 +92,11 @@
 }
 
 .nav-link:hover {
-    color: white;
+    color: var(--theme-nav-link-hover);
 }
 
 .nav-link.active {
-    color: white;
+    color: var(--theme-nav-link-hover);
 }
 
 .nav-link::after {
@@ -107,7 +107,7 @@
     bottom: -4px;
     width: 0;
     height: 2px;
-    background: #ffffff;
+    background: var(--theme-nav-link-underline);
     transition: .3s;
 
 }
@@ -127,8 +127,8 @@
 
     padding: 9px 20px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, .2);
-    color: white;
+    border: 1px solid var(--theme-border-accent);
+    color: var(--theme-text-heading);
     font-size: .88rem;
     font-weight: 500;
     transition: .3s;
@@ -138,9 +138,9 @@
 
 .btn-resume:hover {
 
-    background: white;
-    color: black;
-    border-color: white;
+    background: var(--theme-btn-primary-bg);
+    color: var(--theme-btn-primary-text);
+    border-color: var(--theme-btn-primary-bg);
 
 }
 
@@ -152,7 +152,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, .06);
+    background: var(--theme-nav-toggler-bg);
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -163,7 +163,7 @@
 .navbar-toggler span {
     width: 20px;
     height: 2px;
-    background: white;
+    background: var(--theme-nav-toggler-bar);
 }
 
 .mobile-menu {
@@ -172,9 +172,9 @@
     top: 72px;
     left: 0;
     right: 0;
-    background: rgba(10, 10, 10, .98);
+    background: var(--theme-mobile-bg);
     backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    border-bottom: 1px solid var(--theme-nav-border);
     display: none;
     flex-direction: column;
 
@@ -188,17 +188,17 @@
     padding: 12px 24px;
     font-size: 0.58rem;
     letter-spacing: -0.6px;
-    color: #aaa;
+    color: var(--theme-mobile-link);
     transition: .3s;
 }
 
 .mobile-menu a:hover {
-    background: rgba(255, 255, 255, .08);
-    color: white;
+    background: var(--theme-mobile-hover-bg);
+    color: var(--theme-nav-link-hover);
 }
 
 .mobile-resume {
-    color: white !important;
+    color: var(--theme-text-heading) !important;
     font-weight: 600;
 }
 
