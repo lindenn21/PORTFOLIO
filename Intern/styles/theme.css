@@ -8,6 +8,7 @@
    DARK THEME (DEFAULT — preserves originals)
 ========================================= */
 
+
 :root,
 [data-theme="dark"] {
     /* Backgrounds */
@@ -19,7 +20,6 @@
     --theme-bg-surface: #111111;
     --theme-bg-surface-hover: #141414;
     --theme-bg-logo: #000000;
-
     /* Text */
     --theme-text-primary: #f5f5f5;
     --theme-text-heading: #ffffff;
@@ -334,7 +334,7 @@ body,
 .contact-terminal,
 .contact-card,
 #site-loader {
-    transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 
@@ -350,6 +350,10 @@ body,
 }
 
 @media (max-width: 600px) {
+    * {
+        transition: none !important;
+    }
+
     .theme-toggle {
         margin-left: auto;
         margin-right: 0;
