@@ -350,10 +350,6 @@ body,
 }
 
 @media (max-width: 600px) {
-    * {
-        transition: none !important;
-    }
-
     .theme-toggle {
         margin-left: auto;
         margin-right: 0;
