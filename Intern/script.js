@@ -135,15 +135,13 @@ function initializePortfolio() {
 /*=====================================================
             THEME TOGGLE SYSTEM
 =====================================================*/
-
 function getSavedOrSystemTheme() {
     const savedTheme = localStorage.getItem("portfolio-theme");
+
     if (savedTheme === "dark" || savedTheme === "light") {
         return savedTheme;
     }
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-        return "light";
-    }
+
     return "dark";
 }
 
